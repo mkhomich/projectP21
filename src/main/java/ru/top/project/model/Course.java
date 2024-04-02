@@ -1,14 +1,13 @@
 package ru.top.project.model;
 import java.util.*;
-import ru.top.project.model.Lecture;
 
 public class Course {
 
     private String creator;
     private String Info_course;
     private String survey;
-    private String Subject;
-    private ArrayList<Lecture> lecture = new ArrayList<Lecture>();
+    private String Tags;
+    private ArrayList<Lecture> lecture = new ArrayList<Lecture>( );
 
 
 
@@ -16,11 +15,11 @@ public class Course {
     {
         System.out.println(Arrays.toString(Lecture.toArray()));
     }
-    public String getSubject() {
-        return Subject;
+    public String getTags() {
+        return Tags;
     }
-    public void setSubject(String subject) {
-        Subject = subject;
+    public void setTags(String tags) {
+        Tags = tags;
     }
 
     public String getSurvey() {
