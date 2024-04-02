@@ -1,20 +1,34 @@
 package ru.top.project.model;
 
+import java.util.Objects;
+
 public class HomeWork {
     private String title;
-    private String date_todo;
+    private String deadline;
     private String mark;
     private String info_hw;
     private String user_passed;
     private String name_teacher;
+
+
     //конструктор
     public HomeWork(String title, String date, String mark, String info, String passed, String teacher) {
         this.title = title;
-        this.date_todo = date;
+        this.deadline = date;
         this.mark = mark;
         this.info_hw = info;
         this.user_passed = passed;
         this.name_teacher = teacher;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, deadline, mark, info_hw, user_passed, name_teacher);
     }
 
     //создание домашней работы
@@ -46,12 +60,12 @@ public class HomeWork {
         this.title = title;
     }
 
-    public String getDate_todo() {
-        return date_todo;
+    public String getDeadline() {
+        return deadline;
     }
 
-    public void setDate_todo(String date_todo) {
-        this.date_todo = date_todo;
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
     }
 
     public String getMark() {

@@ -3,23 +3,32 @@ import java.util.*;
 
 public class Course {
 
+
     private String creator;
-    private String Info_course;
+    private String info_course;
     private String survey;
-    private String Tags;
+    private String tags;
     private ArrayList<Lecture> lecture = new ArrayList<Lecture>( );
+    private ArrayList<Reviews> reviews = new ArrayList<Reviews>( );
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(creator, info_course, survey, tags, lecture);
+    }
 
-
-    public static void Show_lecture(List <String> Lecture)
+    public static void ShowLecture(List <String> Lecture)
     {
         System.out.println(Arrays.toString(Lecture.toArray()));
     }
     public String getTags() {
-        return Tags;
+        return tags;
     }
     public void setTags(String tags) {
-        Tags = tags;
+        this.tags = tags;
     }
 
     public String getSurvey() {
@@ -30,10 +39,10 @@ public class Course {
     }
 
     public String getInfo_course() {
-        return Info_course;
+        return info_course;
     }
     public void setInfo_course(String info_course) {
-        Info_course = info_course;
+        this.info_course = info_course;
     }
 
     public String getCreator() {
@@ -49,5 +58,13 @@ public class Course {
 
     public void setLecture(ArrayList<Lecture> lecture) {
         this.lecture = lecture;
+    }
+
+    public ArrayList<Reviews> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(ArrayList<Reviews> reviews) {
+        this.reviews = reviews;
     }
 }
