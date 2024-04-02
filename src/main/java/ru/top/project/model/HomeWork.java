@@ -1,5 +1,4 @@
 package ru.top.project.model;
-
 import java.util.Objects;
 
 public class HomeWork {

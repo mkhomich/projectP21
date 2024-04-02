@@ -5,11 +5,11 @@ public class Course {
 
 
     private String creator;
-    private String info_course;
+    private String infoCourse;
     private String survey;
     private String tags;
-    private ArrayList<Lecture> lecture = new ArrayList<Lecture>( );
-    private ArrayList<Reviews> reviews = new ArrayList<Reviews>( );
+    List lectures = new ArrayList();
+    List reviews = new ArrayList();
 
     @Override
     public boolean equals(Object obj) {
@@ -17,7 +17,7 @@ public class Course {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creator, info_course, survey, tags, lecture);
+        return Objects.hash(creator, infoCourse, survey, tags);
     }
 
     public static void ShowLecture(List <String> Lecture)
@@ -38,11 +38,11 @@ public class Course {
         this.survey = survey;
     }
 
-    public String getInfo_course() {
-        return info_course;
+    public String getInfoCourse() {
+        return infoCourse;
     }
-    public void setInfo_course(String info_course) {
-        this.info_course = info_course;
+    public void setInfoCourse(String infoCourse) {
+        this.infoCourse = infoCourse;
     }
 
     public String getCreator() {
@@ -52,19 +52,4 @@ public class Course {
         this.creator = creator;
     }
 
-    public ArrayList<Lecture> getLecture() {
-        return lecture;
-    }
-
-    public void setLecture(ArrayList<Lecture> lecture) {
-        this.lecture = lecture;
-    }
-
-    public ArrayList<Reviews> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(ArrayList<Reviews> reviews) {
-        this.reviews = reviews;
-    }
 }
