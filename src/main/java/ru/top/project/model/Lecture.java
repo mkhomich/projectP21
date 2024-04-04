@@ -1,6 +1,7 @@
 package ru.top.project.model;
 import java.util.*;
 
+
 public class Lecture {
     private String teacher;
     private int id;
