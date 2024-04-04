@@ -1,9 +1,10 @@
 package ru.top.project.model;
+import java.math.BigInteger;
 import java.util.*;
 
 public class Lecture {
     private String teacher;
-    private int id;
+    private BigInteger id;
     List<HomeWork> homeWorks = new ArrayList<>();
     private int numberlecture;
     private String topic;
@@ -51,10 +52,10 @@ public class Lecture {
         this.payload = payload;
     }
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
     public void setId(int id) {
-        this.id = id;
+        this.id = BigInteger.valueOf(id);
     }
 }
