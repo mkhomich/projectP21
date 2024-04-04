@@ -3,11 +3,13 @@ import java.util.*;
 
 public class Course {
 
-
+    private int id;
     private String creator;
     private String infoCourse;
     private String survey;
     private String tags;
+
+
     List lectures = new ArrayList();
     List reviews = new ArrayList();
 
@@ -17,13 +19,9 @@ public class Course {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creator, infoCourse, survey, tags);
+        return Objects.hash(creator, infoCourse, survey, tags, id);
     }
 
-    public static void ShowLecture(List <String> Lecture)
-    {
-        System.out.println(Arrays.toString(Lecture.toArray()));
-    }
     public String getTags() {
         return tags;
     }
@@ -52,4 +50,10 @@ public class Course {
         this.creator = creator;
     }
 
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
 }

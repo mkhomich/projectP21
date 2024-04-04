@@ -2,59 +2,39 @@ package ru.top.project.model;
 import java.util.Objects;
 
 public class HomeWork {
+    private int id;
     private String title;
     private String deadline;
     private String mark;
-    private String info_hw;
-    private String user_passed;
-    private String name_teacher;
+    private String infoHomework;
+    private String userPassed;
+    private String nameTeacher;
 
 
-    //конструктор
+    //конструкторы
+    public HomeWork() {}
+
     public HomeWork(String title, String date, String mark, String info, String passed, String teacher) {
         this.title = title;
         this.deadline = date;
         this.mark = mark;
-        this.info_hw = info;
-        this.user_passed = passed;
-        this.name_teacher = teacher;
+        this.infoHomework = info;
+        this.userPassed = passed;
+        this.nameTeacher = teacher;
     }
 
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
-
     @Override
     public int hashCode() {
-        return Objects.hash(title, deadline, mark, info_hw, user_passed, name_teacher);
+        return Objects.hash(title, deadline, mark, infoHomework, userPassed, nameTeacher, id);
     }
-
-    //создание домашней работы
-    public static void Create_hw()
-    {
-
-    }
-    //сдача домашней работы
-    public static void Passed_hw()
-    {
-
-    }
-    //выставить отметку
-    public static void Give_mark()
-    {
-
-    }
-    //пересдача
-    public static void Retake_request() {
-
-    }
-
 
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -62,7 +42,6 @@ public class HomeWork {
     public String getDeadline() {
         return deadline;
     }
-
     public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
@@ -70,32 +49,35 @@ public class HomeWork {
     public String getMark() {
         return mark;
     }
-
     public void setMark(String mark) {
         this.mark = mark;
     }
 
-    public String getInfo_hw() {
-        return info_hw;
+    public String getInfoHomework() {
+        return infoHomework;
+    }
+    public void setInfoHomework(String infoHomework) {
+        this.infoHomework = infoHomework;
     }
 
-    public void setInfo_hw(String info_hw) {
-        this.info_hw = info_hw;
+    public String getUserPassed() {
+        return userPassed;
+    }
+    public void setUserPassed(String userPassed) {
+        this.userPassed = userPassed;
     }
 
-    public String getUser_passed() {
-        return user_passed;
+    public String getNameTeacher() {
+        return nameTeacher;
+    }
+    public void setNameTeacher(String nameTeacher) {
+        this.nameTeacher = nameTeacher;
     }
 
-    public void setUser_passed(String user_passed) {
-        this.user_passed = user_passed;
+    public int getId() {
+        return id;
     }
-
-    public String getName_teacher() {
-        return name_teacher;
-    }
-
-    public void setName_teacher(String name_teacher) {
-        this.name_teacher = name_teacher;
+    public void setId(int id) {
+        this.id = id;
     }
 }
