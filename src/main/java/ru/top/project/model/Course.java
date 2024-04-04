@@ -1,9 +1,10 @@
 package ru.top.project.model;
+import java.math.BigInteger;
 import java.util.*;
 
 public class Course {
 
-    private int id;
+    private BigInteger id;
     private String creator;
     private String infoCourse;
     private String survey;
@@ -50,10 +51,10 @@ public class Course {
         this.creator = creator;
     }
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
     public void setId(int id) {
-        this.id = id;
+        this.id = BigInteger.valueOf(id);
     }
 }

@@ -1,8 +1,9 @@
 package ru.top.project.model;
+import java.math.BigInteger;
 import java.util.Objects;
 
 public class Reviews {
-    private int id;
+    private BigInteger id;
     private String comment;
     private String mark;
 
@@ -32,10 +33,10 @@ public class Reviews {
         this.comment = comment;
     }
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
     public void setId(int id) {
-        this.id = id;
+        this.id = BigInteger.valueOf(id);
     }
 }
