@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Lecture {
     private String teacher;
-    private BigInteger id;
-    List homeWorks = new ArrayList();
+    private int id;
+    List<HomeWork> homeWorks = new ArrayList<>();
     private int numberlecture;
     private String topic;
     private String payload;
@@ -55,7 +55,7 @@ public class Lecture {
     public BigInteger getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(BigInteger id) {
         this.id = BigInteger.valueOf(id);
     }
 }
