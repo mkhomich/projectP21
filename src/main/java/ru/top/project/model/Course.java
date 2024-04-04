@@ -10,8 +10,9 @@ public class Course {
     private String tags;
 
 
-    List lectures = new ArrayList();
-    List reviews = new ArrayList();
+    private List<Lecture> lectures = new ArrayList<>();
+    private List<Reviews> reviews = new ArrayList<>();
+
 
     @Override
     public boolean equals(Object obj) {

@@ -4,7 +4,7 @@ import java.util.*;
 public class Lecture {
     private String teacher;
     private int id;
-    List homeWorks = new ArrayList();
+    List<HomeWork> homeWorks = new ArrayList<>();
     private int numberlecture;
     private String topic;
     private String payload;
