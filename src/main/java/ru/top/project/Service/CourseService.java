@@ -5,11 +5,9 @@ import ru.top.project.model.HomeWork;
 import ru.top.project.model.Lecture;
 import ru.top.project.model.Reviews;
 
-public class CourseService {
-    CourseDao dao = new CourseDao();
-
-    public CourseService(){}
-    public CourseService(CourseDao dao) {
+class CourseService {
+    private final CourseDao dao;
+    public CourseService(CourseDao dao){
         this.dao = dao;
     }
     public void enterCourse(){}

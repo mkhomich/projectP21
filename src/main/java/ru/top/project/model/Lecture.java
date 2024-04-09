@@ -6,7 +6,7 @@ public class Lecture {
     private String teacher;
     private int id;
     List<HomeWork> homeWorks = new ArrayList<>();
-    private int numberLecture;
+    private int lectureNumber;
     private String topic;
     private String payload;
 
@@ -16,12 +16,12 @@ public class Lecture {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(teacher, homeWorks, numberLecture, topic, id);
+        return Objects.hash(teacher, homeWorks, lectureNumber, topic, id);
     }
 
     public Lecture(){}
     public Lecture(int numberlecture) {
-        this.numberLecture = numberlecture;
+        this.lectureNumber = numberlecture;
     }
 
     public String getTeacher() {
@@ -31,11 +31,11 @@ public class Lecture {
         this.teacher = teacher;
     }
 
-    public int getNumberLecture() {
-        return numberLecture;
+    public int getLectureNumber() {
+        return lectureNumber;
     }
-    public void setNumberLecture(int numberLecture) {
-        this.numberLecture = numberLecture;
+    public void setLectureNumber(int lectureNumber) {
+        this.lectureNumber = lectureNumber;
     }
 
     public String getTopic() {
