@@ -1,9 +1,14 @@
 package ru.top.project.dataes;
+import ru.top.project.dao.CourseDao;
 import ru.top.project.model.Course;
+import ru.top.project.model.HomeWork;
+import ru.top.project.model.Lecture;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class CourseData {
+public class CourseData implements CourseDao {
     static List<Course> courseList;
     private CourseData() {
         courseList = new ArrayList<>();
@@ -32,6 +37,27 @@ public class CourseData {
             System.out.println("Нет доступных курсов.");
         }
     }
+
+    @Override
+    public List<Course> getAllcourses() {
+        return null;
+    }
+
+    @Override
+    public List<Lecture> getLecturesByCourse() {
+        return null;
+    }
+
+    @Override
+    public List<HomeWork> getHomeWorkByLection() {
+        return null;
+    }
+
+    @Override
+    public Map getCourseById() {
+        return null;
+    }
+
     public List<Course> getAllCourses(){
         return courseList;
     }

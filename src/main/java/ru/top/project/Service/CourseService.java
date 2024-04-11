@@ -15,7 +15,7 @@ class CourseService {
         dao.getAllcourses();
     }
     public void watchLectures(){
-        dao.getLectures();
+        dao.getLecturesByCourse();
     }
     public void watchRegCourses(){}
     public void createReviews(Reviews newReview) {}
