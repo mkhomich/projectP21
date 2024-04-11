@@ -1,7 +1,5 @@
 package ru.top.project.dataes;
 import ru.top.project.model.User;
-
-
 import java.util.List;
 
 public class UserData {
@@ -40,9 +38,6 @@ public class UserData {
             }
             return localInstance;
         }
-//    public static void setInstance(UserData instance ) {
-//        UserData.instance.getAllUsers().add(instance.getId(), instance.getName());
-//    }
 
 
 }

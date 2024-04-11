@@ -9,11 +9,29 @@ public class Course {
     private String survey;
     private String tags;
 
-
+    private List<User> users = new ArrayList<>();
     private List<Lecture> lectures = new ArrayList<>();
     private List<Reviews> reviews = new ArrayList<>();
 
+    private Course(){
 
+    }
+
+    @Override
+    public String toString() {
+        return "Курс: " +
+                "id=" + id +
+                ", создатель курса - '" + creator + '\'' +
+                ", информация о курсе - '" + infoCourse + '\'';
+    }
+
+    public Course(int id, String creator, String infoCourse, String survey, String tags) {
+        this.id = id;
+        this.creator = creator;
+        this.infoCourse = infoCourse;
+        this.survey = survey;
+        this.tags = tags;
+    }
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
