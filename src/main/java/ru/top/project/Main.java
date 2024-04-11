@@ -1,7 +1,7 @@
 package ru.top.project;
 
 import ru.top.project.model.User;
-import ru.top.project.model.UserData;
+import data.UserData;
 
 public class Main {
     public static void main(String[] args) {

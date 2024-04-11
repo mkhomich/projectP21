@@ -1,7 +1,10 @@
-package ru.top.project.model;
+package data;
+import dao.UserDao;
+import ru.top.project.model.User;
+
 import java.util.ArrayList;
 import java.util.List;
-public class UserData implements UserDao{
+public class UserData implements UserDao {
     private static volatile UserData instance;
 
     List<User> usersList = new ArrayList<>();

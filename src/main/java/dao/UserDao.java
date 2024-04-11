@@ -1,4 +1,6 @@
-package ru.top.project.model;
+package dao;
+
+import ru.top.project.model.User;
 
 public interface UserDao {
     void addUser(User user);

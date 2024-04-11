@@ -1,4 +1,7 @@
-package ru.top.project.model;
+package impl;
+
+import dao.UserDao;
+import ru.top.project.model.User;
 
 public class UserDaoImpl implements UserDao {
     @Override
