@@ -2,9 +2,13 @@ package ru.top.project.model;
 
 import java.util.Arrays;
 
-public class Teacher {
+public class Teacher extends User{
     private String [] StudentsList;
     private String [] CreateCourseList;
+
+    public Teacher(String userName, String userLogin, String userPassword, String userId) {
+        super(userName, userLogin, userPassword, userId);
+    }
 
     public String[] getStudentsList() {
         return StudentsList;
