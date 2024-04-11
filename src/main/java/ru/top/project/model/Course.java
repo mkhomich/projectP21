@@ -2,7 +2,7 @@ package ru.top.project.model;
 import java.util.*;
 
 public class Course {
-
+    private List<User> getUser;
     private int id;
     private String creator;
     private String infoCourse;

@@ -1,7 +1,10 @@
 package ru.top.project.model;
 
+import java.util.List;
+
 public class User {
     private int id;
+    private List<Course> getCourse;
     private String name;
     private User(){}
     public User(int id, String name) {

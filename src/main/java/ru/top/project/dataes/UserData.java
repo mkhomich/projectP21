@@ -4,45 +4,40 @@ import ru.top.project.model.User;
 
 import java.util.List;
 
+import java.util.*;
+
 public class UserData {
-    static List<User> userList;
+    private static List<User> userList;
     private static volatile UserData instance;
-    private static void AddUser(User user, int id) {
-        userList = List.of(
-                new User(id, user.getName())
-        );
+
+    private UserData() {
+        userList = new ArrayList<>();
+        // Заполняем список пользователями по умолчанию
+        userList.add(new User(1, "Максим"));
+        userList.add(new User(2, "Миша"));
     }
 
-
-    static{
-        userList = List.of(
-            new User(1, "Максим"),
-            new User(2, "Миша")
-    );}
-
-    private UserData(){
-
+    // Добавление нового пользователя
+    public void addUser(User user) {
+        userList.add(user);
     }
 
-    public List<User> getAllUsers(){
+    // Получение списка всех пользователей
+    public List<User> getAllUsers() {
         return userList;
     }
 
+    // Получение экземпляра класса UserData (с использованием Singleton)
     public static UserData getInstance() {
         UserData localInstance = instance;
-            if (localInstance == null) {
-                synchronized (UserData.class) {
-                    localInstance = instance;
-                    if (localInstance == null) {
-                        instance = localInstance = new UserData();
-                    }
+        if (localInstance == null) {
+            synchronized (UserData.class) {
+                localInstance = instance;
+                if (localInstance == null) {
+                    instance = localInstance = new UserData();
                 }
             }
-            return localInstance;
         }
-//    public static void setInstance(UserData instance ) {
-//        UserData.instance.getAllUsers().add(instance.getId(), instance.getName());
-//    }
-
-
+        return localInstance;
+    }
 }
