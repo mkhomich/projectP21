@@ -6,8 +6,11 @@ public class Reviews {
     private String comment;
     private String mark;
 
+    public Reviews(int id, String comment) {
+        this.id = id;
+        this.comment = comment;
+    }
 
-    public Reviews(){}
 
     @Override
     public boolean equals(Object obj) {

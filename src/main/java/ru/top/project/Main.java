@@ -1,32 +1,29 @@
 package ru.top.project;
-import ru.top.project.dataes.UserData;
-import ru.top.project.model.User;
-import java.util.List;
+
+import ru.top.project.model.Reviews;
+import ru.top.project.dataes.ReviewsData;
+
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class Main {
+public class Main {
     public static void main(String[] args) {
-        List<User> userList = UserData.getInstance().getAllUsers();
-        for (User user : userList) {
-            System.out.println("ID: " + user.getId() + ", Name: " + user.getName());
+        List<Reviews> reviewsList = ReviewsData.getInstance().getAllReviews();
+        for (Reviews reviews : reviewsList) {
+            System.out.println("ID: " + reviews.getId() + ", Comment: " + reviews.getComment());
         }
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите id нового пользователя:  ");
+        System.out.println("Введите id нового комментария: ");
         int newID = in.nextInt();
         in.nextLine();
-        System.out.println("Введите новое имя пользователя:  ");
-        String newNameUser = in.nextLine();
-        User newUser= new User(newID, newNameUser);
-        newUser.setName(newNameUser);
-        newUser.setId(newID);
-        userList.add(newUser);
+        System.out.println("Введите текст комментария: ");
+        String newComment = in.nextLine();
+        Reviews newReviews = new Reviews(newID, newComment);
+        reviewsList.add(newReviews);
 
-        for (User user : userList) {
-            System.out.println("ID: " + user.getId() + ", Name: " + user.getName());
+        for (Reviews reviews : reviewsList) {
+            System.out.println("ID: " + reviews.getId() + ", Comment: " + reviews.getComment());
         }
     }
 }
-
-
