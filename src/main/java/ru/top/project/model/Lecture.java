@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Lecture {
     private String teacher;
+    private int courseId;
     private int id;
     List<HomeWork> homeWorks = new ArrayList<>();
     private int lectureNumber;
@@ -17,6 +18,9 @@ public class Lecture {
     @Override
     public int hashCode() {
         return Objects.hash(teacher, homeWorks, lectureNumber, topic, id);
+    }
+    public void setCourse(int courseId) {
+        this.courseId = courseId;
     }
 
     public Lecture(){}
