@@ -11,6 +11,6 @@ public interface CourseDao {
     public List<Course> getAllcourses();
     public List<Lecture> getLecturesByCourse();
     public List<HomeWork> getHomeWorkByLection();
-    public Map getCourseById();
+    public Map<Integer, Course> getCourseById();
 
 }
