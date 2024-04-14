@@ -3,7 +3,6 @@ import ru.top.project.dao.CourseDao;
 import ru.top.project.model.Course;
 import ru.top.project.model.HomeWork;
 import ru.top.project.model.Lecture;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +53,7 @@ public class CourseData implements CourseDao {
     }
 
     @Override
-    public Map getCourseById() {
+    public Map<Integer, Course> getCourseById() {
         return null;
     }
 

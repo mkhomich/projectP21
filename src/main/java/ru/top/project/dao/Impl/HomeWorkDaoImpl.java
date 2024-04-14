@@ -37,6 +37,7 @@ public class HomeWorkDaoImpl implements HomeWorkDao {
     public void deleteHomeWork(int id) {
         homeWorkMap.remove(id);
     }
+
     private int generateId() {
         return homeWorkMap.size() + 1;
     }
