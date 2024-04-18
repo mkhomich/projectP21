@@ -1,5 +1,8 @@
 package ru.top.project.model;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Course {
 
@@ -9,9 +12,9 @@ public class Course {
     private String survey;
     private String tags;
 
-    private Map<Integer, User> users = new HashMap<>();
-    private Map<Integer, Lecture> lectures = new HashMap<>();
-    private Map<Integer, Reviews> reviews = new HashMap<>();
+    private List<User> users = new ArrayList<>();
+    private List<Lecture> lectures = new ArrayList<>();
+    private List<Review> reviews = new ArrayList<>();
 
     private Course() {
     }
@@ -52,6 +55,7 @@ public class Course {
     public String getTags() {
         return tags;
     }
+
     public void setTags(String tags) {
         this.tags = tags;
     }
@@ -59,6 +63,7 @@ public class Course {
     public String getSurvey() {
         return survey;
     }
+
     public void setSurvey(String survey) {
         this.survey = survey;
     }
@@ -66,6 +71,7 @@ public class Course {
     public String getInfoCourse() {
         return infoCourse;
     }
+
     public void setInfoCourse(String infoCourse) {
         this.infoCourse = infoCourse;
     }
@@ -73,6 +79,7 @@ public class Course {
     public String getCreator() {
         return creator;
     }
+
     public void setCreator(String creator) {
         this.creator = creator;
     }
@@ -80,31 +87,32 @@ public class Course {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public Map<Integer, User> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(Map<Integer, User> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 
-    public Map<Integer, Lecture> getLectures() {
+    public List<Lecture> getLectures() {
         return lectures;
     }
 
-    public void setLectures(Map<Integer, Lecture> lectures) {
+    public void setLectures(List<Lecture> lectures) {
         this.lectures = lectures;
     }
 
-    public Map<Integer, Reviews> getReviews() {
+    public List<Review> getReviews() {
         return reviews;
     }
 
-    public void setReviews(Map<Integer, Reviews> reviews) {
+    public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
 }

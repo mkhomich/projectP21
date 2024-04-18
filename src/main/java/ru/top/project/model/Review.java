@@ -1,14 +1,14 @@
 package ru.top.project.model;
 import java.util.Objects;
 
-public class Reviews {
+public class Review {
     private int id;
-    private int courseById;
+    Course course ;
     private String comment;
     private String mark;
 
 
-    public Reviews(){}
+    public Review(){}
 
     @Override
     public boolean equals(Object obj) {
@@ -40,11 +40,11 @@ public class Reviews {
         this.id = id;
     }
 
-    public int getCourseById() {
-        return courseById;
+    public Course getCourseById() {
+        return course;
     }
 
-    public void setCourseById(int courseById) {
-        this.courseById = courseById;
+    public void setCourseId(int courseId) {
+        course.setId(courseId);
     }
 }

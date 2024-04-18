@@ -1,38 +1,58 @@
 package ru.top.project.dao.Impl;
+
 import ru.top.project.dao.LectureDao;
 import ru.top.project.model.Lecture;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public abstract class LectureDaoImpl implements LectureDao {
-    private final Map<Integer, Lecture> lectureMap;
+    private final List<Lecture> lectureList;
+
     public LectureDaoImpl() {
-        this.lectureMap = new HashMap<>();
+        this.lectureList = new ArrayList<>();
     }
+
     @Override
     public List<Lecture> getAllLectures() {
-        return new ArrayList<>(lectureMap.values());
+        return new ArrayList<>(lectureList);
     }
+
     @Override
     public Lecture getLectureById(int id) {
-        return lectureMap.get(id);
+        for (Lecture lecture : lectureList) {
+            if (lecture.getId() == id) {
+                return lecture;
+            }
+        }
+        return null;
     }
+
     @Override
-    public void addLecture(Lecture lecture) {
-        lecture.setId(generateId());
-        lectureMap.put(lecture.getId(), lecture);
+    public Lecture addLecture(Lecture lecture) {
+        lecture.setId(lecture.getId());
+        lectureList.add(lecture);
+        return lecture;
     }
-    public void updateLecture(Lecture lecture) {
-        lectureMap.put(lecture.getId(), lecture);
+
+    public Lecture updateLecture(Lecture lecture) {
+        for (int i = 0; i < lectureList.size(); i++) {
+            if (lectureList.get(i).getId() == lecture.getId()) {
+                lectureList.set(i, lecture);
+                return lecture;
+            }
+        }
+        return lecture;
     }
+
     @Override
     public void deleteLecture(int id) {
-        lectureMap.remove(id);
+        for (int i = 0; i < lectureList.size(); i++) {
+            if (lectureList.get(i).getId() == id) {
+                lectureList.remove(i);
+                break;
+            }
+        }
     }
-    private int generateId() {
-        return lectureMap.size() + 1;
-    }
-}
 
+}

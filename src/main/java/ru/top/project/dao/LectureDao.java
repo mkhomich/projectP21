@@ -6,8 +6,8 @@ import java.util.List;
 public interface LectureDao {
     List<Lecture> getAllLectures();
     Lecture getLectureById(int id);
-    void addLecture(Lecture lecture);
-    void updateLecture(LectureDaoImpl lecture);
+    Lecture addLecture(Lecture lecture);
+    Lecture updateLecture(LectureDaoImpl lecture);
     void deleteLecture(int id);
 }
 

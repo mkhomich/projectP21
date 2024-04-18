@@ -1,17 +1,17 @@
 package ru.top.project.dao;
 
-import ru.top.project.model.Reviews;
+import ru.top.project.model.Review;
 
 import java.util.List;
 
 public interface ReviewsDao {
-    void addReview(Reviews review);
+    Review addReview(Review review);
 
-    void updateReview(Reviews review);
+    Review updateReview(Review review);
 
     void deleteReview(int reviewId);
 
-    Reviews getReviewById(int reviewId);
+    Review getReviewById(int reviewId);
 
-    List<Reviews> getAllReviewsForCourse(int courseId);
+    List<Review> getAllReviewsForCourse(int courseId);
 }

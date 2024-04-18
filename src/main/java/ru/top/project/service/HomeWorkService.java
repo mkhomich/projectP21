@@ -1,4 +1,4 @@
-package ru.top.project.Service;
+package ru.top.project.service;
 
 import ru.top.project.dao.HomeWorkDao;
 import ru.top.project.model.HomeWork;
@@ -9,16 +9,15 @@ import java.util.Map;
 
 public class HomeWorkService {
     private  HomeWorkDao homeWorkDao;
-    public HomeWorkService(){
-
-    }
+    public HomeWorkService(){    }
 
     public HomeWorkService(HomeWorkDao homeWorkDao) {
         this.homeWorkDao = homeWorkDao;
     }
 
-    public void createHomeWork(HomeWork homeWork) {
+    public HomeWork createHomeWork(HomeWork homeWork) {
         homeWorkDao.addHomeWork(homeWork);
+        return homeWork;
     }
 
     public void updateHomeWork(HomeWork homeWork) {
@@ -34,7 +33,7 @@ public class HomeWorkService {
     }
 
     public List<HomeWork> getAllHomeWorks() {
-        Map<Integer, HomeWork> homeWorkMap = homeWorkDao.getAllHomeWorks();
-        return new ArrayList<>(homeWorkMap.values());
+        List<HomeWork> homeWorkList = homeWorkDao.getAllHomeWorks();
+        return homeWorkList;
     }
 }

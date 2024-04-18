@@ -1,45 +1,62 @@
 package ru.top.project.dao.Impl;
 
 import ru.top.project.dao.ReviewsDao;
-import ru.top.project.model.Reviews;
+import ru.top.project.model.Review;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ReviewsDaoImpl implements ReviewsDao {
-    private final Map<Integer, Reviews> reviewsMap;
+    private final List<Review> reviewsList;
 
     public ReviewsDaoImpl() {
-        this.reviewsMap = new HashMap<>();
+        this.reviewsList = new ArrayList<>();
     }
 
     @Override
-    public void addReview(Reviews review) {
-        reviewsMap.put(review.getId(), review);
+    public Review addReview(Review review) {
+        reviewsList.add(review);
+        return review;
     }
 
     @Override
-    public void updateReview(Reviews review) {
-        reviewsMap.put(review.getId(), review);
+    public Review updateReview(Review review) {
+        int index = reviewsList.indexOf(review);
+        if (index != -1) {
+            reviewsList.set(index, review);
+        }
+        return review;
     }
 
     @Override
     public void deleteReview(int reviewId) {
-        reviewsMap.remove(reviewId);
+        Review reviewToRemove = null;
+        for (Review review : reviewsList) {
+            if (review.getId() == reviewId) {
+                reviewToRemove = review;
+                break;
+            }
+        }
+        if (reviewToRemove != null) {
+            reviewsList.remove(reviewToRemove);
+        }
     }
 
     @Override
-    public Reviews getReviewById(int reviewId) {
-        return reviewsMap.get(reviewId);
+    public Review getReviewById(int reviewId) {
+        for (Review review : reviewsList) {
+            if (review.getId() == reviewId) {
+                return review;
+            }
+        }
+        return null;
     }
 
     @Override
-    public List<Reviews> getAllReviewsForCourse(int courseId) {
-        List<Reviews> reviewsForCourse = new ArrayList<>();
-        for (Reviews review : reviewsMap.values()) {
-            if (review.getCourseById() == courseId) {
+    public List<Review> getAllReviewsForCourse(int courseId) {
+        List<Review> reviewsForCourse = new ArrayList<>();
+        for (Review review : reviewsList) {
+            if (review.getCourseById().getId() == courseId) {
                 reviewsForCourse.add(review);
             }
         }

@@ -1,15 +1,16 @@
 package ru.top.project.dao;
 import ru.top.project.model.HomeWork;
-import java.util.Map;
+
+import java.util.List;
 
 public interface HomeWorkDao {
-    Map<Integer, HomeWork> getAllHomeWorks();
+    List<HomeWork> getAllHomeWorks();
 
     HomeWork getHomeWorkById(int id);
 
-    void addHomeWork(HomeWork homeWork);
+    HomeWork addHomeWork(HomeWork homeWork);
 
-    void updateHomeWork(HomeWork homeWork);
+    HomeWork updateHomeWork(HomeWork homeWork);
 
     void deleteHomeWork(int id);
 }
