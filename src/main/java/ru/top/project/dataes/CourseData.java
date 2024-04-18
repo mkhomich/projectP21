@@ -1,4 +1,5 @@
 package ru.top.project.dataes;
+
 import ru.top.project.dao.CourseDao;
 import ru.top.project.model.Course;
 import ru.top.project.model.HomeWork;
@@ -15,25 +16,10 @@ public class CourseData implements CourseDao {
     private static volatile CourseData instance;
     public void addCourse(Course courses) {
         courseList.add(courses);
-        System.out.println("Курс '" + courseList.getClass() + "' добавлен.");
     }
     public void removeCourse(Course course) {
         if (courseList.contains(course)) {
             courseList.remove(course);
-            System.out.println("Курс '" + course.getInfoCourse() + "' удален.");
-        } else {
-            System.out.println("Курс '" + course.getInfoCourse() + "' не найден.");
-        }
-    }
-
-    public void displayCourses() {
-        if (!courseList.isEmpty()) {
-            System.out.println("Список курсов:");
-            for (Course course : courseList) {
-                System.out.println(course);
-            }
-        } else {
-            System.out.println("Нет доступных курсов.");
         }
     }
 

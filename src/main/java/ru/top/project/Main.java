@@ -1,7 +1,7 @@
 package ru.top.project;
 import ru.top.project.dataes.CourseData;
 import ru.top.project.model.Course;
-public abstract class Main {
+public class Main {
     public static void main(String[] args) {
 
         CourseData courseData = CourseData.getInstance();
@@ -12,9 +12,8 @@ public abstract class Main {
         courseData.addCourse(course1);
         courseData.addCourse(course2);
         courseData.addCourse(course3);
-        courseData.displayCourses();
         courseData.removeCourse(course2);
-        courseData.displayCourses();
+
 
     }
 }

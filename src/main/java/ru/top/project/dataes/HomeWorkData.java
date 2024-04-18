@@ -28,7 +28,6 @@ public class HomeWorkData implements HomeWorkDao {
 
     public void addHomeWork(HomeWork homeWork) {
         homeWorkList.add(homeWork);
-        System.out.println("Домашнее задание для лекции добавлено.");
     }
 
     @Override
@@ -44,20 +43,15 @@ public class HomeWorkData implements HomeWorkDao {
     public void removeHomeWork(HomeWork homeWork) {
         if (homeWorkList.contains(homeWork)) {
             homeWorkList.remove(homeWork);
-            System.out.println("Домашнее задание для лекции удалено.");
-        } else {
-            System.out.println("Домашнее задание для лекции не найдено.");
         }
     }
 
     public void displayHomeWork() {
         if (!homeWorkList.isEmpty()) {
-            System.out.println("Список домашних заданий:");
             for (HomeWork homeWork : homeWorkList) {
                 System.out.println(homeWork);
             }
         } else {
-            System.out.println("Нет доступных домашних заданий.");
         }
     }
 

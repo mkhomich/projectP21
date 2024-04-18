@@ -1,4 +1,5 @@
 package ru.top.project.dao.Impl;
+
 import ru.top.project.dao.CourseDao;
 import ru.top.project.model.Course;
 import ru.top.project.model.HomeWork;
@@ -18,12 +19,10 @@ public class CourseDaoImpl implements CourseDao {
     @Override
     public void addCourse(Course course) {
         courses.put(course.getId(), course);
-        System.out.println("Курс добавлен: " + course);
     }
     @Override
     public void removeCourse(Course course) {
         courses.remove(course.getId());
-        System.out.println("Курс удален: " + course);
     }
     @Override
     public List<Course> getAllcourses() {
