@@ -1,14 +1,19 @@
-package data;
-import dao.UserDao;
+package ru.top.project.dao.impl.data;
+
 import ru.top.project.model.User;
+import ru.top.project.dao.UserDao;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class UserData implements UserDao {
     private static volatile UserData instance;
 
     List<User> usersList = new ArrayList<>();
-    private UserData(){}
+
+    private UserData() {
+    }
+
     public static UserData getInstance() {
         if (instance == null) {
             instance = new UserData();
@@ -16,22 +21,24 @@ public class UserData implements UserDao {
         return instance;
     }
 
-    public void addUser(User user){
+    public User addUser(User user) {
         usersList.add(user);
-        System.out.println("Пользователь " + user.getUserName() + " добавлен.");
+        return user;
     }
 
-    public User getUser(String userId){
-        for(User user : usersList){
-            return user;
+    public User getUser(String userId) {
+        for (User user : usersList) {
+            if (user.getUserId().equals(userId)) {
+                return user;
+            }
         }
         return null;
     }
 
-    public void removeUser(String userId) {
+    public User removeUser(String userId) {
         User userToRemove = null;
         for (User user : usersList) {
-            if (user.getUserId() == userId) {
+            if (user.getUserId().equals(userId)) {
                 userToRemove = user;
                 break;
             }
@@ -39,13 +46,15 @@ public class UserData implements UserDao {
         if (userToRemove != null) {
             usersList.remove(userToRemove);
         }
+        return userToRemove;
     }
 
-    public void getAllUsers(){
-        System.out.println("Все пользователи:");
+    public User getAllUsers() {
+        List<User> userList = new ArrayList<>();
         for (User user : usersList) {
-            System.out.println(user.getUserName() + " (" + user.getUserLogin() + ")");
+            userList.add(user);
         }
+        return (User) userList;
     }
 }
 

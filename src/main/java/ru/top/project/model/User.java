@@ -19,6 +19,7 @@ public class User {
     public String getUserName() {
         return UserName;
     }
+
     public void setUserName(String userName) {
         UserName = userName;
     }
@@ -26,6 +27,7 @@ public class User {
     public String getUserLogin() {
         return UserLogin;
     }
+
     public void setUserLogin(String userLogin) {
         UserLogin = userLogin;
     }
@@ -33,6 +35,7 @@ public class User {
     public String getUserPassword() {
         return UserPassword;
     }
+
     public void setUserPassword(String userPassword) {
         UserPassword = userPassword;
     }
@@ -40,6 +43,7 @@ public class User {
     public String getUserId() {
         return UserId;
     }
+
     public void setUserId(String userId) {
         UserId = userId;
     }
