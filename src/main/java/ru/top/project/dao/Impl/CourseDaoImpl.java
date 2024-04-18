@@ -20,30 +20,23 @@ public class CourseDaoImpl implements CourseDao {
         courses.put(course.getId(), course);
         System.out.println("Курс добавлен: " + course);
     }
-
     @Override
     public void removeCourse(Course course) {
         courses.remove(course.getId());
         System.out.println("Курс удален: " + course);
     }
-
     @Override
     public List<Course> getAllcourses() {
         return new ArrayList<>(courses.values());
     }
-
     @Override
     public List<Lecture> getLecturesByCourse() {
-        // Реализация получения лекций по курсу
         return null;
     }
-
     @Override
     public List<HomeWork> getHomeWorkByLection() {
-        // Реализация получения домашних заданий по лекции
         return null;
     }
-
     @Override
     public Map<Integer, Course> getCourseById() {
         return courses;

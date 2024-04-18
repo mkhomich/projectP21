@@ -1,10 +1,8 @@
 package ru.top.project.model;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class Course {
+
     private int id;
     private String creator;
     private String infoCourse;
@@ -54,7 +52,6 @@ public class Course {
     public String getTags() {
         return tags;
     }
-
     public void setTags(String tags) {
         this.tags = tags;
     }
@@ -62,7 +59,6 @@ public class Course {
     public String getSurvey() {
         return survey;
     }
-
     public void setSurvey(String survey) {
         this.survey = survey;
     }
@@ -70,7 +66,6 @@ public class Course {
     public String getInfoCourse() {
         return infoCourse;
     }
-
     public void setInfoCourse(String infoCourse) {
         this.infoCourse = infoCourse;
     }
@@ -78,7 +73,6 @@ public class Course {
     public String getCreator() {
         return creator;
     }
-
     public void setCreator(String creator) {
         this.creator = creator;
     }
@@ -86,7 +80,6 @@ public class Course {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }

@@ -53,7 +53,7 @@ public class CourseData implements CourseDao {
     }
 
     @Override
-    public Map getCourseById() {
+    public Map<Integer, Course> getCourseById() {
         return null;
     }
 

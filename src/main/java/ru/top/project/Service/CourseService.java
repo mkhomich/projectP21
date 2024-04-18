@@ -17,12 +17,11 @@ class CourseService {
     public void watchLectures(){
         dao.getLecturesByCourse();
     }
-    public void watchRegCourses(){}
     public void createReviews(Reviews newReview) {}
     public void createCourse(Course newCourse){}
     public void createLecture(Lecture newLecture){}
     public void createHomework(HomeWork newHomeWork){}
-    public void watchMadeHomeworks(){}
+
 
 
 }

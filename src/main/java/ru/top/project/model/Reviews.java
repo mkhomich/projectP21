@@ -3,6 +3,7 @@ import java.util.Objects;
 
 public class Reviews {
     private int id;
+    private int courseById;
     private String comment;
     private String mark;
 
@@ -37,5 +38,13 @@ public class Reviews {
     }
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getCourseById() {
+        return courseById;
+    }
+
+    public void setCourseById(int courseById) {
+        this.courseById = courseById;
     }
 }
