@@ -26,6 +26,7 @@ public class ReviewsData {
         return reviewsList;
     }
 
+
     // Получение экземпляра класса UserData (с использованием Singleton)
     public static ReviewsData getInstance() {
         ReviewsData localInstance = instance;
