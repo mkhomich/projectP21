@@ -7,12 +7,19 @@ public class User {
     private String UserName;
     private String UserLogin;
     private String UserPassword;
-    private BigInteger UserId;
-    private String CourseList;
+    private String UserId;
+
+    public User(String userName, String userLogin, String userPassword, String userId) {
+        UserName = userName;
+        UserLogin = userLogin;
+        UserPassword = userPassword;
+        UserId = userId;
+    }
 
     public String getUserName() {
         return UserName;
     }
+
     public void setUserName(String userName) {
         UserName = userName;
     }
@@ -20,6 +27,7 @@ public class User {
     public String getUserLogin() {
         return UserLogin;
     }
+
     public void setUserLogin(String userLogin) {
         UserLogin = userLogin;
     }
@@ -27,22 +35,17 @@ public class User {
     public String getUserPassword() {
         return UserPassword;
     }
+
     public void setUserPassword(String userPassword) {
         UserPassword = userPassword;
     }
 
-    public BigInteger getUserId() {
+    public String getUserId() {
         return UserId;
     }
-    public void setUserId(BigInteger userId) {
-        UserId = userId;
-    }
 
-    public String getCourseList() {
-        return CourseList;
-    }
-    public void setCourseList(String courseList) {
-        CourseList = courseList;
+    public void setUserId(String userId) {
+        UserId = userId;
     }
 
     @Override
@@ -55,6 +58,16 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(getUserId());
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "UserName='" + UserName + '\'' +
+                ", UserLogin='" + UserLogin + '\'' +
+                ", UserPassword='" + UserPassword + '\'' +
+                ", UserId=" + UserId +
+                '}';
     }
 }
 

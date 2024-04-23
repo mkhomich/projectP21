@@ -2,13 +2,18 @@ package ru.top.project.model;
 
 import java.util.Arrays;
 
-public class Teacher {
-    private String [] StudentsList;
-    private String [] CreateCourseList;
+public class Teacher extends User {
+    private String[] StudentsList;
+    private String[] CreateCourseList;
+
+    public Teacher(String userName, String userLogin, String userPassword, String userId) {
+        super(userName, userLogin, userPassword, userId);
+    }
 
     public String[] getStudentsList() {
         return StudentsList;
     }
+
     public void setStudentsList(String[] studentsList) {
         StudentsList = studentsList;
     }
@@ -16,6 +21,7 @@ public class Teacher {
     public String[] getCreateCourseList() {
         return CreateCourseList;
     }
+
     public void setCreateCourseList(String[] createCourseList) {
         CreateCourseList = createCourseList;
     }
@@ -26,6 +32,7 @@ public class Teacher {
         if (!(o instanceof Teacher teacher)) return false;
         return Arrays.equals(getStudentsList(), teacher.getStudentsList()) && Arrays.equals(getCreateCourseList(), teacher.getCreateCourseList());
     }
+
     @Override
     public int hashCode() {
         int result = Arrays.hashCode(getStudentsList());
