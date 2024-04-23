@@ -1,4 +1,4 @@
-package ru.top.project.dao.Impl;
+package ru.top.project.dao.impl.data;
 
 import ru.top.project.dao.LectureDao;
 import ru.top.project.model.Lecture;
@@ -6,9 +6,11 @@ import ru.top.project.model.Lecture;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public abstract class LectureDaoImpl implements LectureDao {
     private final List<Lecture> lectureList;
+    private static final Logger logger = Logger.getLogger(LectureDaoImpl.class.getName()); // Инициализация логгера
 
     public LectureDaoImpl() {
         this.lectureList = new ArrayList<>();

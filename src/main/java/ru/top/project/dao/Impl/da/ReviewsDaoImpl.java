@@ -1,4 +1,4 @@
-package ru.top.project.dao.Impl;
+package ru.top.project.dao.impl.da;
 
 import ru.top.project.dao.ReviewsDao;
 import ru.top.project.model.Review;
