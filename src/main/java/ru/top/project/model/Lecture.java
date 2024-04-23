@@ -6,7 +6,7 @@ public class Lecture {
     private String teacher;
     private BigInteger id;
     List<HomeWork> homeWorks = new ArrayList<>();
-    private int numberlecture;
+    private int lectureNumber;
     private String topic;
     private String payload;
 
@@ -16,12 +16,12 @@ public class Lecture {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(teacher, homeWorks, numberlecture, topic, id);
+        return Objects.hash(teacher, homeWorks, lectureNumber, topic, id);
     }
 
     public Lecture(){}
     public Lecture(int numberlecture) {
-        this.numberlecture = numberlecture;
+        this.lectureNumber = numberlecture;
     }
 
     public String getTeacher() {
@@ -31,11 +31,11 @@ public class Lecture {
         this.teacher = teacher;
     }
 
-    public int getNumberlecture() {
-        return numberlecture;
+    public int getLectureNumber() {
+        return lectureNumber;
     }
-    public void setNumberlecture(int numberlecture) {
-        this.numberlecture = numberlecture;
+    public void setLectureNumber(int lectureNumber) {
+        this.lectureNumber = lectureNumber;
     }
 
     public String getTopic() {
@@ -55,7 +55,7 @@ public class Lecture {
     public BigInteger getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = BigInteger.valueOf(id);
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 }

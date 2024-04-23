@@ -12,7 +12,7 @@ public class HomeWork {
     private String nameTeacher;
 
 
-    //конструкторы
+
     public HomeWork() {}
 
     public HomeWork(String title, String date, String mark, String info, String passed, String teacher) {

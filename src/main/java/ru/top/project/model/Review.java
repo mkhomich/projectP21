@@ -2,13 +2,15 @@ package ru.top.project.model;
 import java.math.BigInteger;
 import java.util.Objects;
 
-public class Reviews {
+
+public class Review {
     private BigInteger id;
+    Course course ;
     private String comment;
     private String mark;
 
 
-    public Reviews(){}
+    public Review(){}
 
     @Override
     public boolean equals(Object obj) {
@@ -38,5 +40,13 @@ public class Reviews {
     }
     public void setId(int id) {
         this.id = BigInteger.valueOf(id);
+    }
+
+    public Course getCourseById() {
+        return course;
+    }
+
+    public void setCourseId(BigInteger courseId) {
+        course.setId(courseId);
     }
 }

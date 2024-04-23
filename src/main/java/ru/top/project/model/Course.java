@@ -1,6 +1,9 @@
 package ru.top.project.model;
+
 import java.math.BigInteger;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Course {
 
@@ -10,18 +13,43 @@ public class Course {
     private String survey;
     private String tags;
 
-
+    private List<User> users = new ArrayList<>();
     private List<Lecture> lectures = new ArrayList<>();
-    private List<Reviews> reviews = new ArrayList<>();
+    private List<Review> reviews = new ArrayList<>();
 
+    private Course() {
+    }
+
+    @Override
+    public String toString() {
+        return "Курс: " +
+                "id=" + id +
+                ", создатель курса - '" + creator + '\'' +
+                ", информация о курсе - '" + infoCourse + '\'';
+    }
+
+    public Course(BigInteger id, String creator, String infoCourse, String survey, String tags) {
+        this.id = id;
+        this.creator = creator;
+        this.infoCourse = infoCourse;
+        this.survey = survey;
+        this.tags = tags;
+    }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Course course = (Course) obj;
+        return id == course.id &&
+                Objects.equals(creator, course.creator) &&
+                Objects.equals(infoCourse, course.infoCourse) &&
+                Objects.equals(survey, course.survey) &&
+                Objects.equals(tags, course.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creator, infoCourse, survey, tags, id);
+        return Objects.hash(id, creator, infoCourse, survey, tags);
     }
 
     public String getTags() {
@@ -55,7 +83,7 @@ public class Course {
     public BigInteger getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = BigInteger.valueOf(id);
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 }
