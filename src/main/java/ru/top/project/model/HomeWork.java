@@ -1,8 +1,9 @@
 package ru.top.project.model;
+import java.math.BigInteger;
 import java.util.Objects;
 
 public class HomeWork {
-    private int id;
+    private BigInteger id;
     private String title;
     private String deadline;
     private String mark;
@@ -74,10 +75,10 @@ public class HomeWork {
         this.nameTeacher = nameTeacher;
     }
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
     public void setId(int id) {
-        this.id = id;
+        this.id = BigInteger.valueOf(id);
     }
 }

@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Course {
 
-    private int id;
+    private BigInteger id;
     private String creator;
     private String infoCourse;
     private String survey;
@@ -46,7 +46,6 @@ public class Course {
                 Objects.equals(survey, course.survey) &&
                 Objects.equals(tags, course.tags);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, creator, infoCourse, survey, tags);
@@ -55,7 +54,6 @@ public class Course {
     public String getTags() {
         return tags;
     }
-
     public void setTags(String tags) {
         this.tags = tags;
     }
@@ -63,7 +61,6 @@ public class Course {
     public String getSurvey() {
         return survey;
     }
-
     public void setSurvey(String survey) {
         this.survey = survey;
     }
@@ -71,7 +68,6 @@ public class Course {
     public String getInfoCourse() {
         return infoCourse;
     }
-
     public void setInfoCourse(String infoCourse) {
         this.infoCourse = infoCourse;
     }
@@ -79,7 +75,6 @@ public class Course {
     public String getCreator() {
         return creator;
     }
-
     public void setCreator(String creator) {
         this.creator = creator;
     }
@@ -87,32 +82,7 @@ public class Course {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
-
-    public List<Lecture> getLectures() {
-        return lectures;
-    }
-
-    public void setLectures(List<Lecture> lectures) {
-        this.lectures = lectures;
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
     }
 }
