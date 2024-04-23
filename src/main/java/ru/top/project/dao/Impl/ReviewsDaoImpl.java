@@ -3,6 +3,7 @@ package ru.top.project.dao.Impl;
 import ru.top.project.dao.ReviewsDao;
 import ru.top.project.model.Review;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +31,21 @@ public class ReviewsDaoImpl implements ReviewsDao {
 
     @Override
     public void deleteReview(int reviewId) {
+
+    }
+
+    @Override
+    public Review getReviewById(int reviewId) {
+        return null;
+    }
+
+    @Override
+    public List<Review> getAllReviewsForCourse(int courseId) {
+        return null;
+    }
+
+    @Override
+    public void deleteReview(BigInteger reviewId) {
         Review reviewToRemove = null;
         for (Review review : reviewsList) {
             if (review.getId() == reviewId) {
@@ -43,7 +59,7 @@ public class ReviewsDaoImpl implements ReviewsDao {
     }
 
     @Override
-    public Review getReviewById(int reviewId) {
+    public Review getReviewById(BigInteger reviewId) {
         for (Review review : reviewsList) {
             if (review.getId() == reviewId) {
                 return review;
@@ -53,7 +69,7 @@ public class ReviewsDaoImpl implements ReviewsDao {
     }
 
     @Override
-    public List<Review> getAllReviewsForCourse(int courseId) {
+    public List<Review> getAllReviewsForCourse(BigInteger courseId) {
         List<Review> reviewsForCourse = new ArrayList<>();
         for (Review review : reviewsList) {
             if (review.getCourseById().getId() == courseId) {

@@ -1,5 +1,6 @@
 package ru.top.project.model;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +28,7 @@ public class Course {
                 ", информация о курсе - '" + infoCourse + '\'';
     }
 
-    public Course(int id, String creator, String infoCourse, String survey, String tags) {
+    public Course(BigInteger id, String creator, String infoCourse, String survey, String tags) {
         this.id = id;
         this.creator = creator;
         this.infoCourse = infoCourse;
@@ -79,10 +80,10 @@ public class Course {
         this.creator = creator;
     }
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 }

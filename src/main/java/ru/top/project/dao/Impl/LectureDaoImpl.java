@@ -3,6 +3,7 @@ package ru.top.project.dao.Impl;
 import ru.top.project.dao.LectureDao;
 import ru.top.project.model.Lecture;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public abstract class LectureDaoImpl implements LectureDao {
     }
 
     @Override
-    public Lecture getLectureById(int id) {
+    public Lecture getLectureById(BigInteger id) {
         for (Lecture lecture : lectureList) {
             if (lecture.getId() == id) {
                 return lecture;
@@ -46,7 +47,7 @@ public abstract class LectureDaoImpl implements LectureDao {
     }
 
     @Override
-    public void deleteLecture(int id) {
+    public void deleteLecture(BigInteger id) {
         for (int i = 0; i < lectureList.size(); i++) {
             if (lectureList.get(i).getId() == id) {
                 lectureList.remove(i);

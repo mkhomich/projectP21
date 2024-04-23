@@ -46,7 +46,7 @@ public class Review {
         return course;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(BigInteger courseId) {
         course.setId(courseId);
     }
 }
