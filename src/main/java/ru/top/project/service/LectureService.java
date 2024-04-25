@@ -10,7 +10,7 @@ public class LectureService {
         this.lectureDaoImpl = lecture;
     }
     public Lecture createLecture(Lecture lecture) {
-        lecture.setCourse(lecture.getId());
+        lecture.setId(lecture.getId());
         this.lectureDaoImpl.addLecture(lecture);
         return lecture;
     }
