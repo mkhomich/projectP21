@@ -9,6 +9,9 @@ public class User {
     private String password;
     private BigInteger id;
 
+    public User(String userName, String userLogin, String userPassword, String userId) {
+    }
+
     @Override
     public String toString() {
         return "User{" +
