@@ -1,6 +1,7 @@
 package ru.top.project.dao.Impl;
+
+import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import ru.top.project.dao.HomeWorkDao;
@@ -10,7 +11,7 @@ public class HomeWorkDaoImpl implements HomeWorkDao {
     private final List<HomeWork> homeWorkList;
 
     public HomeWorkDaoImpl() {
-        this.homeWorkList = (List<HomeWork>) new HashMap<>();
+        this.homeWorkList = new ArrayList<>();
     }
 
     @Override
@@ -18,30 +19,43 @@ public class HomeWorkDaoImpl implements HomeWorkDao {
         return homeWorkList;
     }
 
-    @Override
-    public HomeWork getHomeWorkById(int id) {
-        return homeWorkList.get(id);
+    public HomeWork getHomeWorkById(BigInteger id) {
+        for (HomeWork homeWork : homeWorkList) {
+            if (homeWork.getId() == id) {
+                return homeWork;
+            }
+        }
+        return null;
     }
 
     @Override
     public HomeWork addHomeWork(HomeWork homeWork) {
         homeWork.setId(generateId());
-        homeWorkList.set(homeWork.getId(), homeWork);
+        homeWorkList.add(homeWork);
         return homeWork;
     }
 
     @Override
     public HomeWork updateHomeWork(HomeWork homeWork) {
-        homeWorkList.get(homeWork.getId());
-        return homeWork;
+        for (int i = 0; i < homeWorkList.size(); i++) {
+            if (homeWorkList.get(i).getId() == homeWork.getId()) {
+                homeWorkList.set(i, homeWork);
+                return homeWork;
+            }
+        }
+        return null;
     }
 
-    @Override
-    public void deleteHomeWork(int id) {
-        homeWorkList.remove(id);
+    public void deleteHomeWork(BigInteger id) {
+        for (int i = 0; i < homeWorkList.size(); i++) {
+            if (homeWorkList.get(i).getId() == id) {
+                homeWorkList.remove(i);
+                return;
+            }
+        }
     }
 
-    private int generateId() {
-        return homeWorkList.size() + 1;
+    private BigInteger generateId() {
+        return BigInteger.valueOf(homeWorkList.size() + 1);
     }
 }
