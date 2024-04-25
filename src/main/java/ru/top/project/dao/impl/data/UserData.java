@@ -28,7 +28,7 @@ public class UserData implements UserDao {
 
     public User getUser(String userId) {
         for (User user : usersList) {
-            if (user.getUserId().equals(userId)) {
+            if (user.getId().equals(userId)) {
                 return user;
             }
         }
@@ -38,7 +38,7 @@ public class UserData implements UserDao {
     public User removeUser(String userId) {
         User userToRemove = null;
         for (User user : usersList) {
-            if (user.getUserId().equals(userId)) {
+            if (user.getId().equals(userId)) {
                 userToRemove = user;
                 break;
             }

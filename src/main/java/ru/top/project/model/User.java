@@ -4,70 +4,64 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 public class User {
-    private String UserName;
-    private String UserLogin;
-    private String UserPassword;
-    private BigInteger UserId;
+    private String name;
+    private String login;
+    private String password;
+    private BigInteger id;
 
-    public User(String userName, String userLogin, String userPassword, BigInteger userId) {
-        UserName = userName;
-        UserLogin = userLogin;
-        UserPassword = userPassword;
-        UserId = userId;
-    }
-
-    public String getUserName() {
-        return UserName;
-    }
-
-    public void setUserName(String userName) {
-        UserName = userName;
-    }
-
-    public String getUserLogin() {
-        return UserLogin;
-    }
-
-    public void setUserLogin(String userLogin) {
-        UserLogin = userLogin;
-    }
-
-    public String getUserPassword() {
-        return UserPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        UserPassword = userPassword;
-    }
-
-    public BigInteger getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(BigInteger userId) {
-        UserId = userId;
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", id=" + id +
+                '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User user)) return false;
-        return Objects.equals(getUserId(), user.getUserId());
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name) && Objects.equals(login, user.login) && Objects.equals(password, user.password) && Objects.equals(id, user.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getUserId());
+        return Objects.hash(name, login, password, id);
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "UserName='" + UserName + '\'' +
-                ", UserLogin='" + UserLogin + '\'' +
-                ", UserPassword='" + UserPassword + '\'' +
-                ", UserId=" + UserId +
-                '}';
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public BigInteger getId() {
+        return id;
+    }
+
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 }
 
