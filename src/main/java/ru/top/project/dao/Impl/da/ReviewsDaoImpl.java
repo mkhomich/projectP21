@@ -6,9 +6,12 @@ import ru.top.project.model.Review;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ReviewsDaoImpl implements ReviewsDao {
-    private final List<Review> reviewsList;
+    private List<Review> reviewsList;
+    private static final Logger logger = Logger.getLogger(ReviewsDao.class.getName());
 
     public ReviewsDaoImpl() {
         this.reviewsList = new ArrayList<>();
@@ -17,6 +20,8 @@ public class ReviewsDaoImpl implements ReviewsDao {
     @Override
     public Review addReview(Review review) {
         reviewsList.add(review);
+
+        logger.log(Level.INFO, "Review add: " + review );
         return review;
     }
 
@@ -26,6 +31,7 @@ public class ReviewsDaoImpl implements ReviewsDao {
         if (index != -1) {
             reviewsList.set(index, review);
         }
+        logger.log(Level.INFO, "Review update: " + review );
         return review;
     }
 

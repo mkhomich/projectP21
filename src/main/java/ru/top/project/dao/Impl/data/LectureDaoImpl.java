@@ -6,11 +6,12 @@ import ru.top.project.model.Lecture;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public abstract class LectureDaoImpl implements LectureDao {
     private final List<Lecture> lectureList;
-    private static final Logger logger = Logger.getLogger(LectureDaoImpl.class.getName()); // Инициализация логгера
+    private static final Logger logger = Logger.getLogger(LectureDaoImpl.class.getName());
 
     public LectureDaoImpl() {
         this.lectureList = new ArrayList<>();
@@ -35,7 +36,9 @@ public abstract class LectureDaoImpl implements LectureDao {
     public Lecture addLecture(Lecture lecture) {
         lecture.setId(lecture.getId());
         lectureList.add(lecture);
+        logger.log(Level.INFO, "Lecture add: " + lecture);
         return lecture;
+
     }
 
     public Lecture updateLecture(Lecture lecture) {
@@ -44,7 +47,9 @@ public abstract class LectureDaoImpl implements LectureDao {
                 lectureList.set(i, lecture);
                 return lecture;
             }
+
         }
+        logger.log(Level.INFO, "Update lecture: " + lecture);
         return lecture;
     }
 
@@ -55,7 +60,9 @@ public abstract class LectureDaoImpl implements LectureDao {
                 lectureList.remove(i);
                 break;
             }
+
         }
+        logger.log(Level.INFO, "Delete Lecture: " + id);
     }
 
 }
