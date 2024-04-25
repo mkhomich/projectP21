@@ -1,42 +1,45 @@
 package ru.top.project.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class Teacher extends User {
-    private String[] StudentsList;
-    private String[] CreateCourseList;
+    List<Student> studentList = new ArrayList<>();
+    List<Teacher> teacherList = new ArrayList<>();
 
     public Teacher(String userName, String userLogin, String userPassword, String userId) {
         super(userName, userLogin, userPassword, userId);
     }
 
-    public String[] getStudentsList() {
-        return StudentsList;
+    public List<Student> getStudentList() {
+        return studentList;
     }
 
-    public void setStudentsList(String[] studentsList) {
-        StudentsList = studentsList;
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
     }
 
-    public String[] getCreateCourseList() {
-        return CreateCourseList;
+    public List<Teacher> getTeacherList() {
+        return teacherList;
     }
 
-    public void setCreateCourseList(String[] createCourseList) {
-        CreateCourseList = createCourseList;
+    public void setTeacherList(List<Teacher> teacherList) {
+        this.teacherList = teacherList;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Teacher teacher)) return false;
-        return Arrays.equals(getStudentsList(), teacher.getStudentsList()) && Arrays.equals(getCreateCourseList(), teacher.getCreateCourseList());
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Teacher teacher = (Teacher) o;
+        return Objects.equals(studentList, teacher.studentList) && Objects.equals(teacherList, teacher.teacherList);
     }
 
     @Override
     public int hashCode() {
-        int result = Arrays.hashCode(getStudentsList());
-        result = 31 * result + Arrays.hashCode(getCreateCourseList());
-        return result;
+        return Objects.hash(super.hashCode(), studentList, teacherList);
     }
 }
