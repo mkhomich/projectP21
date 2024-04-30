@@ -1,5 +1,4 @@
 package ru.top.project.dao.Impl;
-
 import ru.top.project.dao.UserDao;
 import ru.top.project.model.User;
 
