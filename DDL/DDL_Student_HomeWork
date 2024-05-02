@@ -1,0 +1,5 @@
+CREATE TABLE student_homework (
+  homework_id BIGINT REFERENCES homework (id),
+  student_id BIGINT REFERENCES Users (id),
+  PRIMARY KEY (homework_id, student_id)
+);

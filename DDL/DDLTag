@@ -1,4 +1,5 @@
-CREATE TABLE Tag (
-    id SERIAL PRIMARY KEY,
-    tag VARCHAR(50) UNIQUE
+CREATE TABLE tag (
+  id BIGINT PRIMARY KEY,
+  tag TEXT,
+  course BIGINT REFERENCES course (id)
 );

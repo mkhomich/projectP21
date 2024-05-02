@@ -1,5 +1,6 @@
-CREATE TABLE Review (
-    id SERIAL PRIMARY KEY,
-    comment TEXT,
-    mark VARCHAR(10)
+CREATE TABLE review (
+  id BIGINT PRIMARY KEY,
+  course BIGINT REFERENCES course (id),
+  comment TEXT,
+  mark TEXT
 );
