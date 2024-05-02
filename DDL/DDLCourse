@@ -1,0 +1,9 @@
+CREATE TABLE Course (
+    id SERIAL PRIMARY KEY,
+    lecture_id bigint REFERENCES Lecture(id),
+    review_id bigint REFERENCES Review(id),
+    creator_id bigint REFERENCES Users(id),
+    info_course TEXT,
+    survey TEXT,
+    tags_id bigint REFERENCES Tag(id)
+);

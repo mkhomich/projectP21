@@ -1,0 +1,9 @@
+CREATE TABLE HomeWork (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100),
+    deadline DATE,
+    mark VARCHAR(10),
+    info_homework TEXT,
+    user_passed VARCHAR(100),
+    name_teacher VARCHAR(100)
+);

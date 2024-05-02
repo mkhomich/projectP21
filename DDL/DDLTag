@@ -1,0 +1,4 @@
+CREATE TABLE Tag (
+    id SERIAL PRIMARY KEY,
+    tag VARCHAR(50) UNIQUE
+);

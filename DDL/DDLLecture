@@ -1,0 +1,8 @@
+CREATE TABLE Lecture (
+    id SERIAL PRIMARY KEY,
+    homework_id bigint REFERENCES HomeWork(id),
+    teacher_id bigint REFERENCES Users(id),
+    lecture_number INT,
+    topic VARCHAR(100),
+    payload TEXT
+);

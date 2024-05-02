@@ -1,0 +1,5 @@
+CREATE TABLE Review (
+    id SERIAL PRIMARY KEY,
+    comment TEXT,
+    mark VARCHAR(10)
+);
