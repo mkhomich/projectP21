@@ -4,7 +4,7 @@ import ru.top.project.model.User;
 
 public interface UserDao {
     User addUser(User user);
-    User getUser(String userId);
+    String getUser(String userId);
     User removeUser(String userId);
     User getAllUsers();
 }

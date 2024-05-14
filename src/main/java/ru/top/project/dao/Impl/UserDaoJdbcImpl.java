@@ -6,16 +6,19 @@ import ru.top.project.model.User;
 import java.sql.*;
 
 public class UserDaoJdbcImpl implements UserDao {
-    private final Connection connection;
-    private final Statement statement;
+    private  Connection connection;
+    private static final String JDBC_URI = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String JDBC_LOGIN = "postgres";
+    private static final String JDBC_PASSWORD = "123";
+    private final PreparedStatement statement;
     private ResultSet results;
 
     {
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "123");
-            statement = connection.createStatement();
+                    JDBC_URI,
+                    JDBC_LOGIN, JDBC_PASSWORD);
+            statement = connection.prepareStatement("SELECT * FROM users WHERE id = ?");
         } catch (SQLException e) {
             throw new IllegalStateException("Failed to establish database connection.", e);
         }
@@ -27,8 +30,8 @@ public class UserDaoJdbcImpl implements UserDao {
     }
 
     @Override
-    public User getUser(String userId) {
-        return null;
+    public String getUser(String userId) {
+        return User.getUserId();
     }
 
     @Override
