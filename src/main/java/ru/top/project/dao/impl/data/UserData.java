@@ -1,4 +1,4 @@
-package ru.top.project.dao.impl.data;
+package ru.top.project.dao.Impl.data;
 
 import ru.top.project.model.User;
 import ru.top.project.dao.UserDao;
@@ -26,10 +26,10 @@ public class UserData implements UserDao {
         return user;
     }
 
-    public User getUser(String userId) {
+    public String getUser(String userId) {
         for (User user : usersList) {
             if (user.getUserId().equals(userId)) {
-                return user;
+                return String.valueOf(user);
             }
         }
         return null;

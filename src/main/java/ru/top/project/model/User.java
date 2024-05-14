@@ -1,12 +1,13 @@
 package ru.top.project.model;
 
+import java.math.BigInteger;
 import java.util.Objects;
 
 public class User {
     private String UserName;
     private String UserLogin;
     private String UserPassword;
-    private String UserId;
+    private static String UserId;
 
     public User(String userName, String userLogin, String userPassword, String userId) {
         UserName = userName;

@@ -4,7 +4,7 @@ import ru.top.project.model.User;
 
 public class UserDaoImpl implements UserDao {
     @Override
-    public User getUser(String userId) {
+    public String getUser(String userId) {
         return null;
     }
     @Override
