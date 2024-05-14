@@ -1,46 +1,48 @@
 package ru.top.project.dao.Impl;
 
+import ru.top.project.dao.UserDao;
+import ru.top.project.model.User;
+
 import java.sql.*;
 
-public class UserDaoJdbcImpl {
-    private Connection connection;
-    private Statement statement;
+public class UserDaoJdbcImpl implements UserDao {
+    private final Connection connection;
+    private final Statement statement;
     private ResultSet results;
 
-    public UserDaoJdbcImpl() {
+    {
         try {
             connection = DriverManager.getConnection(
                     "jdbc:postgresql://localhost:5432/postgres",
                     "postgres", "123");
             statement = connection.createStatement();
-
-            results = statement.executeQuery("SELECT * FROM users");
         } catch (SQLException e) {
-
-            e.printStackTrace();
-
+            throw new IllegalStateException("Failed to establish database connection.", e);
         }
     }
 
-    public void printData(Integer id) {
+    @Override
+    public User addUser(User user) {
+        return null;
+    }
+
+    @Override
+    public User getUser(String userId) {
+        return null;
+    }
+
+    @Override
+    public User removeUser(String userId) {
+        return null;
+    }
+
+    public User getAllUsers() {
         try {
-            if (results != null) {
-                while (results.next()) {
-                    Integer idUser = results.getInt(1);
-                    String name = results.getString(2);
-                    if (idUser.equals(id)) { // Проверяем соответствие id пользователя
-                        System.out.println(idUser + "\t" + name);
-                        return; // Завершаем метод после вывода данных нужного пользователя
-                    }
-                }
-                // Если не найдено записей с заданным id
-                System.out.println("Пользователь с id " + id + " не найден.");
-            }
+            results = statement.executeQuery("SELECT * FROM users");
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            closeResources();
         }
+        return null;
     }
 
 
@@ -56,9 +58,7 @@ public class UserDaoJdbcImpl {
                 connection.close();
             }
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
     }
 }
-

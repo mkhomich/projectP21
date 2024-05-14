@@ -1,18 +1,25 @@
 package ru.top.project;
+
 import ru.top.project.dao.Impl.UserDaoJdbcImpl;
 
-import java.io.InputStream;
-import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
 
+    public static void main(String[] args) {
         UserDaoJdbcImpl jdbc = new UserDaoJdbcImpl();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введиете id пользователя ");
-        Integer id = scanner.nextInt();
+        System.out.println("Введите id пользователя:");
 
-        jdbc.printData(id);
+        try {
+            int userId = scanner.nextInt();
+        } catch (Exception e) {
+            logger.severe("Ошибка при вводе id пользователя: " + e.getMessage());
+        } finally {
+            scanner.close();
+        }
     }
 }
+
