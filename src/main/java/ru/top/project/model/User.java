@@ -1,6 +1,5 @@
 package ru.top.project.model;
 
-import java.math.BigInteger;
 import java.util.Objects;
 
 public class User {
@@ -40,7 +39,7 @@ public class User {
         UserPassword = userPassword;
     }
 
-    public String getUserId() {
+    public static User getUserId() {
         return UserId;
     }
 
