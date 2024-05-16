@@ -3,34 +3,26 @@ package ru.top.project.dao.Impl;
 import ru.top.project.dao.UserDao;
 import ru.top.project.model.User;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.*;
 
-public class UserDaoJdbcImpl implements UserDao {
-    private  Connection connection;
+public abstract class UserDaoJdbcImpl implements UserDao {
     private static final String JDBC_URI = "jdbc:postgresql://localhost:5432/postgres";
     private static final String JDBC_LOGIN = "postgres";
     private static final String JDBC_PASSWORD = "123";
-    private final PreparedStatement statement;
-    private ResultSet results;
-
-    {
-        try {
-            connection = DriverManager.getConnection(
-                    JDBC_URI,
-                    JDBC_LOGIN, JDBC_PASSWORD);
-            statement = connection.prepareStatement("SELECT * FROM users WHERE id = ?");
-        } catch (SQLException e) {
-            throw new IllegalStateException("Failed to establish database connection.", e);
-        }
-    }
+    private static final String GET_ALL_USERS_QUERY = "SELECT * FROM users";
+    private static final String GET_USER_BY_ID_QUERY = "SELECT * FROM users WHERE id = ?";
 
     @Override
     public User addUser(User user) {
         return null;
     }
 
-    @Override
-    public String getUser(String userId) {
+
+    public BigInteger getUser(BigInteger userId) {
         return User.getUserId();
     }
 
@@ -39,29 +31,50 @@ public class UserDaoJdbcImpl implements UserDao {
         return null;
     }
 
-    public User getAllUsers() {
-        try {
-            results = statement.executeQuery("SELECT * FROM users");
+    public User getUserById(BigInteger id) {
+        try (Connection connection = DriverManager.getConnection(JDBC_URI, JDBC_LOGIN, JDBC_PASSWORD);
+             PreparedStatement statement = connection.prepareStatement(GET_USER_BY_ID_QUERY);
+             ResultSet resultSet = statement.executeQuery()) {
+
+            statement.setBigDecimal(1, new BigDecimal(id));
+            if (resultSet.next()) {
+                BigInteger userId = resultSet.getBigDecimal("id").toBigInteger();
+                String userLogin = resultSet.getString("userLogin");
+                String userPassword = resultSet.getString("userPassword");
+                String userName = resultSet.getString("userName");
+                return new User(userName, userLogin, userPassword, userId);
+            } else {
+                return null;
+            }
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new IllegalStateException("Не удалось установить соединение с базой данных.", e);
         }
-        return null;
     }
 
+    public User getAllUsers() {
+        try (Connection connection = DriverManager.getConnection(JDBC_URI, JDBC_LOGIN, JDBC_PASSWORD);
+             PreparedStatement statement = connection.prepareStatement(GET_ALL_USERS_QUERY);
+             ResultSet results = statement.executeQuery()) {
 
-    private void closeResources() {
-        try {
-            if (results != null) {
-                results.close();
-            }
-            if (statement != null) {
-                statement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
+            // Здесь должна быть логика для формирования и возврата списка пользователей
+            return null;
+
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
+        }
+    }
+
+    private void closeResources(AutoCloseable... resources) {
+        for (AutoCloseable resource : resources) {
+            if (resource != null) {
+                try {
+                    resource.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

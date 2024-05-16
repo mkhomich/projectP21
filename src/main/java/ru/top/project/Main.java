@@ -9,7 +9,12 @@ public class Main {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
-        UserDaoJdbcImpl jdbc = new UserDaoJdbcImpl();
+        UserDaoJdbcImpl jdbc = new UserDaoJdbcImpl() {
+            @Override
+            public String getUser(String userId) {
+                return "";
+            }
+        };
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите id пользователя:");
 
