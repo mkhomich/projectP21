@@ -3,5 +3,6 @@ CREATE TABLE Users (
   name TEXT,
   login TEXT,
   password TEXT,
+  photo_URL TEXT,
   role VARCHAR(50) CHECK (role IN ('admin', 'teacher', 'student'))
 );

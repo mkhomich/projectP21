@@ -2,5 +2,6 @@ CREATE TABLE course (
   id BIGINT PRIMARY KEY,
   creator BIGINT REFERENCES Users (id),
   info_course TEXT,
+  photo_URL TEXT,
   survey TEXT
 );
