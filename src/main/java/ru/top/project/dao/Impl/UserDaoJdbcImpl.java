@@ -8,8 +8,10 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class UserDaoJdbcImpl implements UserDao {
+public class UserDaoJdbcImpl implements UserDao {
     private static final String JDBC_URI = "jdbc:postgresql://localhost:5432/postgres";
     private static final String JDBC_LOGIN = "postgres";
     private static final String JDBC_PASSWORD = "123";
@@ -20,12 +22,6 @@ public abstract class UserDaoJdbcImpl implements UserDao {
     public User addUser(User user) {
         return null;
     }
-
-
-    public BigInteger getUser(BigInteger userId) {
-        return User.getUserId();
-    }
-
     @Override
     public User removeUser(String userId) {
         return null;
@@ -52,29 +48,27 @@ public abstract class UserDaoJdbcImpl implements UserDao {
         }
     }
 
-    public User getAllUsers() {
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
         try (Connection connection = DriverManager.getConnection(JDBC_URI, JDBC_LOGIN, JDBC_PASSWORD);
              PreparedStatement statement = connection.prepareStatement(GET_ALL_USERS_QUERY);
              ResultSet results = statement.executeQuery()) {
 
-            // Здесь должна быть логика для формирования и возврата списка пользователей
-            return null;
+            while (results.next()) {
+                BigInteger userId = results.getBigDecimal("id").toBigInteger();
+                String userName = results.getString("userName");
+                String userLogin = results.getString("userLogin");
+                String userPassword = results.getString("userPassword");
+
+
+                User user = new User(userName, userLogin, userPassword, userId);
+                users.add(user);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
-    }
 
-    private void closeResources(AutoCloseable... resources) {
-        for (AutoCloseable resource : resources) {
-            if (resource != null) {
-                try {
-                    resource.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        return users;
     }
-}
+    }

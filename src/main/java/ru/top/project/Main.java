@@ -10,7 +10,6 @@ public class Main {
 
     public static void main(String[] args) {
         UserDaoJdbcImpl jdbc = new UserDaoJdbcImpl() {
-            @Override
             public String getUser(String userId) {
                 return "";
             }
