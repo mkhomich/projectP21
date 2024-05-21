@@ -26,6 +26,10 @@ public class User {
     @Column(name = "photo_URL")
     private String urlPhoto;
 
+    @ManyToOne
+    @MapsId
+    @JoinColumn(name = "creator")
+    private Course course;
 
     @Override
     public String toString() {

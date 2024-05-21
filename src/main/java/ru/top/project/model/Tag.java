@@ -10,9 +10,13 @@ public class Tag {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = )
+    @Column(name = "id")
     private BigInteger id;
+
+    @Column(name = "tag")
     private String tag;
+
+    @Column(name = "course")
     private BigInteger course_id;
 
     public Tag(BigInteger course_id, String tag, BigInteger id) {
