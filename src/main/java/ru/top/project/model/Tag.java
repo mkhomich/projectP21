@@ -1,10 +1,16 @@
 package ru.top.project.model;
 
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tags")
 public class Tag {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = )
     private BigInteger id;
     private String tag;
     private BigInteger course_id;
