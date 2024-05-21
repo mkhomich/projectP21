@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 public class Tag {
+
     private BigInteger id;
     private String tag;
     private BigInteger course_id;

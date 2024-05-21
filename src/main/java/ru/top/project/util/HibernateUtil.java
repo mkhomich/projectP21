@@ -14,12 +14,12 @@ public class HibernateUtil {
             try {
                 Configuration configuration = new Configuration();
                 configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-                configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/postgres");
+                configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:5432/postgres");
                 configuration.setProperty("hibernate.connection.username", "postgres");
                 configuration.setProperty("hibernate.connection.password", "123");
 
                 // Указание диалекта базы данных
-                configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+                configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.postgresSQL");
 
                 // Указание, нужно ли показывать SQL запросы
                 configuration.setProperty("hibernate.show_sql", "true");
