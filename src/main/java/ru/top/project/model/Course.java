@@ -10,6 +10,7 @@ public class Course {
     private BigInteger id;
     private String creator;
     private String infoCourse;
+    private String urlPhotoCourse;
     private String survey;
     private String tags;
 
@@ -85,5 +86,13 @@ public class Course {
     }
     public void setId(BigInteger id) {
         this.id = id;
+    }
+
+    public String getUrlPhotoCourse() {
+        return urlPhotoCourse;
+    }
+
+    public void setUrlPhotoCourse(String urlPhotoCourse) {
+        this.urlPhotoCourse = urlPhotoCourse;
     }
 }

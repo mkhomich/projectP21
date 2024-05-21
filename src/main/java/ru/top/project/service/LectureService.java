@@ -1,5 +1,5 @@
 package ru.top.project.service;
-import ru.top.project.dao.Impl.LectureDaoImpl;
+import ru.top.project.dao.impl.LectureDaoImpl;
 import ru.top.project.model.Lecture;
 
 import java.util.List;

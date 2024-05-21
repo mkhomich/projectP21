@@ -1,5 +1,5 @@
 package ru.top.project.dao;
-import ru.top.project.dao.Impl.LectureDaoImpl;
+import ru.top.project.dao.impl.LectureDaoImpl;
 import ru.top.project.model.Lecture;
 
 import java.math.BigInteger;
