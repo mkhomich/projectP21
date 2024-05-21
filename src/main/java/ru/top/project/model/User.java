@@ -1,19 +1,56 @@
 package ru.top.project.model;
 
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
 
+
+@Entity
+@Table(name = "Users")
 public class User {
+
+    @Column(name = "name")
     private String UserName;
+
+    @Column(name = "login")
     private String UserLogin;
+
+    @Column(name = "password")
     private String UserPassword;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private static BigInteger UserId;
 
-    public User(String userName, String userLogin, String userPassword, BigInteger userId) {
+    @Column(name = "photo_URL")
+    private String urlPhoto;
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "UserName='" + UserName + '\'' +
+                ", UserLogin='" + UserLogin + '\'' +
+                ", UserPassword='" + UserPassword + '\'' +
+                ", urlPhoto='" + urlPhoto + '\'' +
+                '}';
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    public User(String userName, String userLogin, String userPassword, BigInteger userId, String UrlPhoto) {
         UserName = userName;
         UserLogin = userLogin;
         UserPassword = userPassword;
         UserId = userId;
+        urlPhoto = UrlPhoto;
     }
 
 
@@ -61,14 +98,5 @@ public class User {
         return Objects.hash(getUserId());
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "UserName='" + UserName + '\'' +
-                ", UserLogin='" + UserLogin + '\'' +
-                ", UserPassword='" + UserPassword + '\'' +
-                ", UserId=" + UserId +
-                '}';
-    }
 }
 

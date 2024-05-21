@@ -1,18 +1,31 @@
 package ru.top.project.model;
 
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "course")
 public class Course {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private BigInteger id;
-    private String creator;
-    private String infoCourse;
-    private String survey;
-    private String tags;
 
+    @ManyToOne
+    @Column(name = "creator")
+    private String creator;
+
+    @Column(name = "info_course")
+    private String infoCourse;
+
+    @Column(name = "survey")
+    private String survey;
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<>();
     private List<Lecture> lectures = new ArrayList<>();
     private List<Review> reviews = new ArrayList<>();
@@ -28,12 +41,11 @@ public class Course {
                 ", информация о курсе - '" + infoCourse + '\'';
     }
 
-    public Course(BigInteger id, String creator, String infoCourse, String survey, String tags) {
+    public Course(BigInteger id, String creator, String infoCourse, String survey) {
         this.id = id;
         this.creator = creator;
         this.infoCourse = infoCourse;
         this.survey = survey;
-        this.tags = tags;
     }
 
     @Override
@@ -44,19 +56,11 @@ public class Course {
         return id == course.id &&
                 Objects.equals(creator, course.creator) &&
                 Objects.equals(infoCourse, course.infoCourse) &&
-                Objects.equals(survey, course.survey) &&
-                Objects.equals(tags, course.tags);
+                Objects.equals(survey, course.survey);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, creator, infoCourse, survey, tags);
-    }
-
-    public String getTags() {
-        return tags;
-    }
-    public void setTags(String tags) {
-        this.tags = tags;
+        return Objects.hash(id, creator, infoCourse, survey);
     }
 
     public String getSurvey() {

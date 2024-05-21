@@ -42,7 +42,8 @@ public abstract class UserDaoJdbcImpl implements UserDao {
                 String userLogin = resultSet.getString("userLogin");
                 String userPassword = resultSet.getString("userPassword");
                 String userName = resultSet.getString("userName");
-                return new User(userName, userLogin, userPassword, userId);
+                String urlPhoto = resultSet.getString("urlPhoto");
+                return new User(userName, userLogin, userPassword, userId, urlPhoto);
             } else {
                 return null;
             }

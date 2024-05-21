@@ -7,8 +7,8 @@ public class Teacher extends User {
     private String[] StudentsList;
     private String[] CreateCourseList;
 
-    public Teacher(String userName, String userLogin, String userPassword, BigInteger userId) {
-        super(userName, userLogin, userPassword, userId);
+    public Teacher(String userName, String userLogin, String userPassword, BigInteger userId, String urlPhoto) {
+        super(userName, userLogin, userPassword, userId, urlPhoto);
     }
 
     public String[] getStudentsList() {
