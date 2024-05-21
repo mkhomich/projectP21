@@ -7,14 +7,15 @@ public class User {
     private String UserName;
     private String UserLogin;
     private String UserPassword;
-    private String UserId;
+    private static BigInteger UserId;
 
-    public User(String userName, String userLogin, String userPassword, String userId) {
+    public User(String userName, String userLogin, String userPassword, BigInteger userId) {
         UserName = userName;
         UserLogin = userLogin;
         UserPassword = userPassword;
         UserId = userId;
     }
+
 
     public String getUserName() {
         return UserName;
@@ -40,11 +41,11 @@ public class User {
         UserPassword = userPassword;
     }
 
-    public String getUserId() {
+    public static BigInteger getUserId() {
         return UserId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(BigInteger userId) {
         UserId = userId;
     }
 

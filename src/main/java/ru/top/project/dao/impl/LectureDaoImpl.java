@@ -1,4 +1,4 @@
-package ru.top.project.dao.Impl;
+package ru.top.project.dao.impl;
 
 import ru.top.project.dao.LectureDao;
 import ru.top.project.model.Lecture;

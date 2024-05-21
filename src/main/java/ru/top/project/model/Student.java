@@ -1,5 +1,6 @@
 package ru.top.project.model;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Objects;
 public class Student extends User {
     List<Student> studentList = new ArrayList<>();
 
-    public Student(String userName, String userLogin, String userPassword, String userId) {
+    public Student(String userName, String userLogin, String userPassword, BigInteger userId) {
         super(userName, userLogin, userPassword, userId);
     }
 

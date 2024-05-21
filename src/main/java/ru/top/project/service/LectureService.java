@@ -1,5 +1,5 @@
 package ru.top.project.service;
-import ru.top.project.dao.Impl.LectureDaoImpl;
+import ru.top.project.dao.impl.LectureDaoImpl;
 import ru.top.project.model.Lecture;
 
 import java.util.List;
@@ -10,7 +10,7 @@ public class LectureService {
         this.lectureDaoImpl = lecture;
     }
     public Lecture createLecture(Lecture lecture) {
-        lecture.setCourse(lecture.getId());
+        lecture.setId(lecture.getId());
         this.lectureDaoImpl.addLecture(lecture);
         return lecture;
     }
