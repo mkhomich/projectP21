@@ -13,8 +13,8 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
-                configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-                configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:5432/postgres");
+                configuration.setProperty("hibernate.connection.driver_class", "com.postgresql.jdbc.Driver");
+                configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/postgres");
                 configuration.setProperty("hibernate.connection.username", "postgres");
                 configuration.setProperty("hibernate.connection.password", "123");
 
