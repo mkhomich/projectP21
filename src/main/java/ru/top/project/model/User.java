@@ -9,6 +9,11 @@ import java.util.Objects;
 @Table(name = "Users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private static BigInteger UserId;
+
     @Column(name = "name")
     private String UserName;
 
@@ -17,11 +22,6 @@ public class User {
 
     @Column(name = "password")
     private String UserPassword;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private static BigInteger UserId;
 
     @Column(name = "photo_URL")
     private String urlPhoto;
