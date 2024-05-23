@@ -1,12 +1,13 @@
 package ru.top.project.dao.impl.data;
 
+import org.springframework.stereotype.Repository;
 import ru.top.project.dao.LectureDao;
 import ru.top.project.model.Lecture;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public abstract class LectureListDaoImpl implements LectureDao {
     private final List<Lecture> lectureList;
 

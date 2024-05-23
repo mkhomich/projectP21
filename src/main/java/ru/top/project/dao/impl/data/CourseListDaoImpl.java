@@ -1,5 +1,6 @@
 package ru.top.project.dao.impl.data;
 
+import org.springframework.stereotype.Repository;
 import ru.top.project.dao.CourseDao;
 import ru.top.project.model.Course;
 import ru.top.project.model.HomeWork;
@@ -7,7 +8,7 @@ import ru.top.project.model.Lecture;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public abstract class CourseListDaoImpl implements CourseDao {
     private List<Course> courses;
 

@@ -4,9 +4,10 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
 import ru.top.project.dao.HomeWorkDao;
 import ru.top.project.model.HomeWork;
-
+@Repository
 public class HomeWorkListDaoImpl implements HomeWorkDao {
     private final List<HomeWork> homeWorkList;
 
