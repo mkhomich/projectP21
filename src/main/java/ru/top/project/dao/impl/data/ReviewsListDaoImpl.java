@@ -1,12 +1,13 @@
 package ru.top.project.dao.impl.data;
 
+import org.springframework.stereotype.Repository;
 import ru.top.project.dao.ReviewsDao;
 import ru.top.project.model.Review;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class ReviewsListDaoImpl implements ReviewsDao {
     private final List<Review> reviewsList;
 
