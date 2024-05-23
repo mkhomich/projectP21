@@ -1,14 +1,27 @@
 package ru.top.project.model;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
 
-
+@Entity
+@Table(name = "review")
 public class Review {
-    private BigInteger id;
-    Course course ;
-    private String comment;
-    private String mark;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private BigInteger id;
+
+    @ManyToOne
+    @MapsId
+    @JoinColumn(name = "id")
+    private Course course;
+
+    @Column(name = "comment")
+    private String comment;
+
+    @Column(name = "mark")
+    private String mark;
 
     public Review(){}
 

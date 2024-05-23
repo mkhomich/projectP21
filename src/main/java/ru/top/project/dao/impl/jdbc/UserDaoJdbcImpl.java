@@ -36,7 +36,8 @@ public class UserDaoJdbcImpl implements UserDao {
                 String userLogin = resultSet.getString("userLogin");
                 String userPassword = resultSet.getString("userPassword");
                 String userName = resultSet.getString("userName");
-                return new User(userName, userLogin, userPassword, userId);
+                String urlPhoto = resultSet.getString("urlPhoto");
+                return new User(userName, userLogin, userPassword, userId, urlPhoto);
             } else {
                 return null;
             }
@@ -57,9 +58,9 @@ public class UserDaoJdbcImpl implements UserDao {
                 String userName = results.getString("userName");
                 String userLogin = results.getString("userLogin");
                 String userPassword = results.getString("userPassword");
+                String urlPhoto = results.getString("urlPhoto");
 
-
-                User user = new User(userName, userLogin, userPassword, userId);
+                User user = new User(userName, userLogin, userPassword, userId, urlPhoto);
                 users.add(user);
             }
 
