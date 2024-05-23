@@ -1,4 +1,4 @@
-package ru.top.project.dao.impl;
+package ru.top.project.dao.impl.jdbc;
 
 import ru.top.project.dao.UserDao;
 import ru.top.project.model.User;

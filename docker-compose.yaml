@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  database:
+    image: postgres
+    networks:
+      - app
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: database
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      ACCOUNT_DB_URI: postgresql://admin:password@database:5432/database
+
+networks:
+  app:
+    driver: bridge
