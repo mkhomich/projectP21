@@ -1,11 +1,14 @@
 package ru.top.project.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.top.project.dao.impl.data.LectureListDaoImpl;
 import ru.top.project.model.Lecture;
 
 import java.util.List;
-
+@Service
 public class LectureService {
     private LectureListDaoImpl lectureListDaoImpl;
+    @Autowired
     public LectureService(LectureListDaoImpl lecture) {
         this.lectureListDaoImpl = lecture;
     }
