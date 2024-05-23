@@ -5,6 +5,7 @@ import java.util.*;
 @Entity
 @Table(name = "lecture")
 public class Lecture {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
