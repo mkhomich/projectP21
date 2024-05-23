@@ -1,4 +1,4 @@
-package ru.top.project.dao.impl;
+package ru.top.project.dao.impl.data;
 
 import ru.top.project.dao.ReviewsDao;
 import ru.top.project.model.Review;
@@ -7,10 +7,10 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReviewsDaoImpl implements ReviewsDao {
+public class ReviewsListDaoImpl implements ReviewsDao {
     private final List<Review> reviewsList;
 
-    public ReviewsDaoImpl() {
+    public ReviewsListDaoImpl() {
         this.reviewsList = new ArrayList<>();
     }
 

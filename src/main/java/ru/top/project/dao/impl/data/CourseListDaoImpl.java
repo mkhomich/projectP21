@@ -1,4 +1,4 @@
-package ru.top.project.dao.impl;
+package ru.top.project.dao.impl.data;
 
 import ru.top.project.dao.CourseDao;
 import ru.top.project.model.Course;
@@ -8,10 +8,10 @@ import ru.top.project.model.Lecture;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class CourseDaoImpl implements CourseDao {
+public abstract class CourseListDaoImpl implements CourseDao {
     private List<Course> courses;
 
-    public CourseDaoImpl() {
+    public CourseListDaoImpl() {
         courses = new ArrayList<>();
     }
 

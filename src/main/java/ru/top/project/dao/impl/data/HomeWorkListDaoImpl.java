@@ -1,4 +1,4 @@
-package ru.top.project.dao.impl;
+package ru.top.project.dao.impl.data;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -7,10 +7,10 @@ import java.util.List;
 import ru.top.project.dao.HomeWorkDao;
 import ru.top.project.model.HomeWork;
 
-public class HomeWorkDaoImpl implements HomeWorkDao {
+public class HomeWorkListDaoImpl implements HomeWorkDao {
     private final List<HomeWork> homeWorkList;
 
-    public HomeWorkDaoImpl() {
+    public HomeWorkListDaoImpl() {
         this.homeWorkList = new ArrayList<>();
     }
 

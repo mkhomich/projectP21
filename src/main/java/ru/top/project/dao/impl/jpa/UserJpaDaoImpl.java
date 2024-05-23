@@ -1,11 +1,11 @@
-package ru.top.project.dao.impl;
+package ru.top.project.dao.impl.jpa;
 import ru.top.project.dao.UserDao;
 import ru.top.project.model.User;
 
 import java.math.BigInteger;
 import java.util.List;
 
-public class UserDaoImpl implements UserDao {
+public class UserJpaDaoImpl implements UserDao {
     @Override
     public User removeUser(String userId) {
         return null;
