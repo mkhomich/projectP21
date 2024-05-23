@@ -9,8 +9,8 @@ import java.util.Objects;
 public class Student extends User {
     List<Student> studentList = new ArrayList<>();
 
-    public Student(String userName, String userLogin, String userPassword, BigInteger userId) {
-        super(userName, userLogin, userPassword, userId);
+    public Student(String userName, String userLogin, String userPassword, BigInteger userId, String urlPhoto) {
+        super(userName, userLogin, userPassword, userId, urlPhoto);
     }
 
     public List<Student> getStudentList() {
