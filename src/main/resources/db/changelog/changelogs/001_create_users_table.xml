@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="createUsersTable" author="your_name_here">
+
+        <createTable tableName="Users">
+            <column name="id" type="SERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="TEXT"/>
+            <column name="login" type="TEXT"/>
+            <column name="password" type="TEXT"/>
+            <column name="photo_URL" type="TEXT"/>
+            <column name="role" type="VARCHAR(50)">
+                <constraints checkConstraint="role IN ('admin', 'teacher', 'student')"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
