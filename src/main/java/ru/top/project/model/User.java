@@ -1,20 +1,62 @@
 package ru.top.project.model;
 
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
 
-public class User {
-    private String UserName;
-    private String UserLogin;
-    private String UserPassword;
-    private String UserId;
 
-    public User(String userName, String userLogin, String userPassword, String userId) {
+@Entity
+@Table(name = "Users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private static BigInteger UserId;
+
+    @Column(name = "name")
+    private String UserName;
+
+    @Column(name = "login")
+    private String UserLogin;
+
+    @Column(name = "password")
+    private String UserPassword;
+
+    @Column(name = "photo_URL")
+    private String urlPhoto;
+
+    @ManyToOne
+    @MapsId
+    @JoinColumn(name = "creator")
+    private Course course;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "UserName='" + UserName + '\'' +
+                ", UserLogin='" + UserLogin + '\'' +
+                ", UserPassword='" + UserPassword + '\'' +
+                ", urlPhoto='" + urlPhoto + '\'' +
+                '}';
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    public User(String userName, String userLogin, String userPassword, BigInteger userId, String UrlPhoto) {
         UserName = userName;
         UserLogin = userLogin;
         UserPassword = userPassword;
         UserId = userId;
+        urlPhoto = UrlPhoto;
     }
+
 
     public String getUserName() {
         return UserName;
@@ -40,11 +82,11 @@ public class User {
         UserPassword = userPassword;
     }
 
-    public String getUserId() {
+    public static BigInteger getUserId() {
         return UserId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(BigInteger userId) {
         UserId = userId;
     }
 
@@ -60,14 +102,5 @@ public class User {
         return Objects.hash(getUserId());
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "UserName='" + UserName + '\'' +
-                ", UserLogin='" + UserLogin + '\'' +
-                ", UserPassword='" + UserPassword + '\'' +
-                ", UserId=" + UserId +
-                '}';
-    }
 }
 

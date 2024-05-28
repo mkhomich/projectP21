@@ -1,13 +1,14 @@
 package ru.top.project.model;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 
 public class Teacher extends User {
     private String[] StudentsList;
     private String[] CreateCourseList;
 
-    public Teacher(String userName, String userLogin, String userPassword, String userId) {
-        super(userName, userLogin, userPassword, userId);
+    public Teacher(String userName, String userLogin, String userPassword, BigInteger userId, String urlPhoto) {
+        super(userName, userLogin, userPassword, userId, urlPhoto);
     }
 
     public String[] getStudentsList() {

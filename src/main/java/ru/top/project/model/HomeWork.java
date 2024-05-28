@@ -1,14 +1,25 @@
 package ru.top.project.model;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
-
+@Entity
+@Table(name = "homework")
 public class HomeWork {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private BigInteger id;
+    @Column(name = "title")
     private String title;
+    @Column(name = "deadline")
     private String deadline;
+    @Column(name = "mark")
     private String mark;
+    @Column(name = "info_homework")
     private String infoHomework;
+    @Column(name = "user_passed")
     private String userPassed;
+    @Column(name = "name_teacher")
     private String nameTeacher;
 
 
@@ -78,7 +89,7 @@ public class HomeWork {
     public BigInteger getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = BigInteger.valueOf(id);
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 }
