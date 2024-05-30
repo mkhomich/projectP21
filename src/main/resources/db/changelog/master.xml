@@ -6,5 +6,11 @@
   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
     <include file="src/main/resources/db/changelog/changelogs/001_create_users_table.xml"/>
+    <include file="src/main/resources/db/changelog/changelogs/002_create_course_table.xml"/>
+    <include file="src/main/resources/db/changelog/changelogs/003_create_homework_table.xml"/>
+    <include file="src/main/resources/db/changelog/changelogs/004_create_lecture_table.xml"/>
+    <include file="src/main/resources/db/changelog/changelogs/005_create_Review_table.xml"/>
+    <include file="src/main/resources/db/changelog/changelogs/006_create_Tag_table.xml"/>
+    <include file="src/main/resources/db/changelog/changelogs/007_create_StudentHomework_table.xml"/>
 
 </databaseChangeLog>
