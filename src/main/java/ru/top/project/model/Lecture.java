@@ -43,8 +43,10 @@ public class Lecture {
     }
 
     public Lecture(){}
-    public Lecture(int lectureNumber) {
-        this.lectureNumber = lectureNumber;
+    public Lecture(BigInteger id, String topic, String payload ) {
+        this.id = id;
+        this.topic = topic;
+        this.payload = payload;
     }
 
     public String getTeacher() {

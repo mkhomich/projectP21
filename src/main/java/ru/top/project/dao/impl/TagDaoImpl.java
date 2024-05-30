@@ -20,9 +20,4 @@ public class TagDaoImpl implements TagDao {
         return null;
     }
 
-    public Tag deleteTag(Tag tag){
-        return null;
-    }
-
-
 }
