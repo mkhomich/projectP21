@@ -1,22 +1,21 @@
 package ru.top.project.model;
 
-import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
 
-@Entity
-@Table(name = "tags")
+//@Entity
+//@Table(name = "tags")
 public class Tag {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id")
     private BigInteger id;
 
-    @Column(name = "tag")
+//    @Column(name = "tag")
     private String tag;
 
-    @Column(name = "course")
+//    @Column(name = "course")
     private BigInteger course_id;
 
     public Tag(BigInteger course_id, String tag, BigInteger id) {

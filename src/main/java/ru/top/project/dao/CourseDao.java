@@ -8,10 +8,15 @@ import java.util.List;
 
 public interface CourseDao {
     public void addCourse(Course courses);
+
     public void removeCourse(Course course);
+
     public List<Course> getAllcourses();
+
     public List<Lecture> getLecturesByCourse();
+
     public List<HomeWork> getHomeWorkByLection();
+
     public List<Course> getCourseById();
 
     public Course getCourseById(Course course);

@@ -1,38 +1,37 @@
 package ru.top.project.model;
 
-import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Entity
-@Table(name = "course")
+//@Entity
+//@Table(name = "course")
 public class Course {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id")
     private BigInteger id;
 
-    @ManyToOne
-    @Column(name = "creator")
+//    @ManyToOne
+//    @Column(name = "creator")
     private String creator;
 
-    @Column(name = "info_course")
+//    @Column(name = "info_course")
     private String infoCourse;
 
-    @Column(name = "survey")
+//    @Column(name = "survey")
     private String urlPhotoCourse;
 
     private String survey;
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<User> users = new ArrayList<>();
 
     private List<Lecture> lectures = new ArrayList<>();
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<Review> reviews = new ArrayList<>();
 
     private Course() {

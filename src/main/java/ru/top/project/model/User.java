@@ -1,9 +1,10 @@
 package ru.top.project.model;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+
 import java.math.BigInteger;
 import java.util.Objects;
-
 
 @Entity
 @Table(name = "Users")
@@ -11,32 +12,31 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private static BigInteger UserId;
+    private Long userId;
 
     @Column(name = "name")
-    private String UserName;
+    private String userName;
 
     @Column(name = "login")
-    private String UserLogin;
+    private String userLogin;
 
     @Column(name = "password")
-    private String UserPassword;
+    private String userPassword;
 
     @Column(name = "photo_URL")
     private String urlPhoto;
 
-    @ManyToOne
-    @MapsId
-    @JoinColumn(name = "creator")
-    private Course course;
+//    @ManyToOne
+//    @MapsId
+//    @JoinColumn(name = "creator")
+//    private Course course;
 
     @Override
     public String toString() {
         return "User{" +
-                "UserName='" + UserName + '\'' +
-                ", UserLogin='" + UserLogin + '\'' +
-                ", UserPassword='" + UserPassword + '\'' +
+                "UserName='" + userName + '\'' +
+                ", UserLogin='" + userLogin + '\'' +
+                ", UserPassword='" + userPassword + '\'' +
                 ", urlPhoto='" + urlPhoto + '\'' +
                 '}';
     }
@@ -48,47 +48,57 @@ public class User {
     public void setUrlPhoto(String urlPhoto) {
         this.urlPhoto = urlPhoto;
     }
+    public User() {
+    }
 
     public User(String userName, String userLogin, String userPassword, BigInteger userId, String UrlPhoto) {
-        UserName = userName;
-        UserLogin = userLogin;
-        UserPassword = userPassword;
-        UserId = userId;
+        userName = userName;
+        userLogin = userLogin;
+        userPassword = userPassword;
+        userId = userId;
         urlPhoto = UrlPhoto;
     }
 
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
     public String getUserLogin() {
-        return UserLogin;
+        return userLogin;
     }
 
     public void setUserLogin(String userLogin) {
-        UserLogin = userLogin;
+        this.userLogin = userLogin;
     }
 
     public String getUserPassword() {
-        return UserPassword;
+        return userPassword;
     }
 
     public void setUserPassword(String userPassword) {
-        UserPassword = userPassword;
+        this.userPassword = userPassword;
     }
 
-    public static BigInteger getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(BigInteger userId) {
-        UserId = userId;
-    }
+//    public Course getCourse() {
+//        return course;
+//    }
+//
+//    public void setCourse(Course course) {
+//        this.course = course;
+//    }
 
     @Override
     public boolean equals(Object o) {

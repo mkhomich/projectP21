@@ -1,13 +1,12 @@
 package ru.top.project.service;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 import ru.top.project.dao.ReviewsDao;
 import ru.top.project.model.Review;
 import java.util.List;
-@Service
+
 public class ReviewsService {
     private final ReviewsDao reviewsDao;
-    @Autowired
+
     public ReviewsService(ReviewsDao reviewsDao) {
         this.reviewsDao = reviewsDao;
     }

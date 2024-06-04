@@ -1,34 +1,36 @@
 package ru.top.project.model;
-import javax.persistence.*;
+
 import java.math.BigInteger;
 import java.util.Objects;
 
-@Entity
-@Table(name = "review")
+//@Entity
+//@Table(name = "review")
 public class Review {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    //    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id")
     private BigInteger id;
 
-    @ManyToOne
-    @MapsId
-    @JoinColumn(name = "id")
+    //    @ManyToOne
+//    @MapsId
+//    @JoinColumn(name = "id")
     private Course course;
 
-    @Column(name = "comment")
+    //    @Column(name = "comment")
     private String comment;
 
-    @Column(name = "mark")
+    //    @Column(name = "mark")
     private String mark;
 
-    public Review(){}
+    public Review() {
+    }
 
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(comment, mark, id);
@@ -37,6 +39,7 @@ public class Review {
     public String getMark() {
         return mark;
     }
+
     public void setMark(String mark) {
         this.mark = mark;
     }
@@ -44,6 +47,7 @@ public class Review {
     public String getComment() {
         return comment;
     }
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -51,6 +55,7 @@ public class Review {
     public BigInteger getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = BigInteger.valueOf(id);
     }
