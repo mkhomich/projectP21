@@ -4,10 +4,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.top.project.dao.UserDao;
 import ru.top.project.model.User;
 
+import javax.net.ssl.HandshakeCompletedEvent;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class UserJpaDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return getSession().createQuery("SELECT * FROM \"Users\"", User.class).getResultList();
     }
 
     @Transactional(readOnly = true)
