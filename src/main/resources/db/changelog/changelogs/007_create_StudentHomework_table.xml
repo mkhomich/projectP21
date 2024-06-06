@@ -14,7 +14,7 @@
             <column name="student_id" type="BIGINT">
                 <constraints foreignKeyName="fk_student_homework_student" references="Users(id)"/>
             </column>
-            <primaryKey columnNames="homework_id, student_id"/>
+
         </createTable>
     </changeSet>
 
