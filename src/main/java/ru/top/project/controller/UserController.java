@@ -9,7 +9,7 @@ import java.math.BigInteger;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/clients")
 public class UserController {
     @Autowired
     private UserServiceImpl userService;

@@ -20,7 +20,7 @@ public class UserJpaDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return getSession().createQuery("SELECT * FROM \"Users\"", User.class).getResultList();
+        return getSession().createQuery("SELECT * FROM \"clients\"", User.class).getResultList();
     }
 
     @Transactional(readOnly = true)

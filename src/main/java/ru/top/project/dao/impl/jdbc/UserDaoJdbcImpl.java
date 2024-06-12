@@ -13,8 +13,8 @@ public class UserDaoJdbcImpl implements UserDao {
     private static final String JDBC_URI = "jdbc:postgresql://localhost:5432/postgres";
     private static final String JDBC_LOGIN = "postgres";
     private static final String JDBC_PASSWORD = "123";
-    private static final String GET_ALL_USERS_QUERY = "SELECT * FROM users";
-    private static final String GET_USER_BY_ID_QUERY = "SELECT * FROM users WHERE id = ?";
+    private static final String GET_ALL_USERS_QUERY = "SELECT * FROM clients";
+    private static final String GET_USER_BY_ID_QUERY = "SELECT * FROM clients WHERE id = ?";
 
     @Override
     public User addUser(User user) {

@@ -7,7 +7,7 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "clients")
 public class User {
 
     @Id
