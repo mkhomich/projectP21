@@ -23,7 +23,7 @@ public class User {
     @Column(name = "password")
     private String userPassword;
 
-    @Column(name = "photo_URL")
+    @Column(name = "photo_url")
     private String urlPhoto;
 
 //    @ManyToOne
@@ -51,12 +51,12 @@ public class User {
     public User() {
     }
 
-    public User(String userName, String userLogin, String userPassword, BigInteger userId, String UrlPhoto) {
+    public User(String userName, String userLogin, String userPassword, BigInteger userId, String urlPhoto) {
         userName = userName;
         userLogin = userLogin;
         userPassword = userPassword;
         userId = userId;
-        urlPhoto = UrlPhoto;
+        urlPhoto = urlPhoto;
     }
 
 

@@ -9,13 +9,13 @@
     <changeSet id="001_create_users_table.xml" author="Roman">
 
         <createTable tableName="clients">
-            <column name="id" type="SERIAL">
+            <column name="id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="TEXT"/>
             <column name="login" type="TEXT"/>
             <column name="password" type="TEXT"/>
-            <column name="photo_URL" type="TEXT"/>
+            <column name="photo_url" type="TEXT"/>
             <column name="role" type="VARCHAR(50)">
                 <constraints checkConstraint="role IN ('admin', 'teacher', 'student')"/>
             </column>

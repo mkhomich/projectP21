@@ -2,6 +2,7 @@ package ru.top.project.dao.impl.jpa;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.NativeQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import ru.top.project.model.User;
 
 import javax.net.ssl.HandshakeCompletedEvent;
 import java.math.BigInteger;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 @Repository
@@ -20,7 +22,7 @@ public class UserJpaDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return getSession().createQuery("SELECT * FROM \"clients\"", User.class).getResultList();
+        return getSession().createQuery("SELECT a FROM User a", User.class).getResultList();
     }
 
     @Transactional(readOnly = true)
@@ -30,13 +32,15 @@ public class UserJpaDaoImpl implements UserDao {
 
     @Transactional
     public User addUser(User user) {
-        getSession().saveOrUpdate(user);
+        getSession().persist(user);
         return user;
     }
 
     @Override
-    public User removeUser(String userId) {
-        return null;
+    public User removeUser(BigInteger userId) {
+        User user = null;
+        getSession().createQuery("DELETE FROM User WHERE id = :id").setParameter("id", userId).executeUpdate();
+        return user;
     }
 
 

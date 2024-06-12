@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserDao {
     User addUser(User user);
 
-    User removeUser(String userId);
+    User removeUser(BigInteger userId);
 
     List<User> getAllUsers();
 
