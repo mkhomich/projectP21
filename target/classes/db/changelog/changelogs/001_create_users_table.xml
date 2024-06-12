@@ -8,7 +8,7 @@
 
     <changeSet id="001_create_users_table.xml" author="Roman">
 
-        <createTable tableName="Users">
+        <createTable tableName="clients">
             <column name="id" type="SERIAL">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
