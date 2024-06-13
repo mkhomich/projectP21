@@ -1,6 +1,5 @@
 package ru.top.project.dao.impl.jdbc;
 
-import org.springframework.stereotype.Repository;
 import ru.top.project.dao.UserDao;
 import ru.top.project.model.User;
 
@@ -9,7 +8,7 @@ import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-@Repository
+
 public class UserDaoJdbcImpl implements UserDao {
     private static final String JDBC_URI = "jdbc:postgresql://localhost:5432/postgres";
     private static final String JDBC_LOGIN = "postgres";

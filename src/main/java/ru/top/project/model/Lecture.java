@@ -1,48 +1,53 @@
 package ru.top.project.model;
-import javax.persistence.*;
+
 import java.math.BigInteger;
 import java.util.*;
-@Entity
-@Table(name = "lecture")
+
+//@Entity
+//@Table(name = "lecture")
 public class Lecture {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    //    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id")
     private BigInteger id;
 
-    @Column(name = "teacher")
+    //    @Column(name = "teacher")
     private String teacher;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
+    //    @ManyToOne
+//    @JoinColumn(name = "course_id")
     private Course course;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    //    @ManyToOne
+//    @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "lecture", cascade = CascadeType.ALL, orphanRemoval = true)
+    //    @OneToMany(mappedBy = "lecture", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HomeWork> homeWorks = new ArrayList<>();
 
-    @Column(name = "lecture_number")
+    //    @Column(name = "lecture_number")
     private int lectureNumber;
 
-    @Column(name = "topic")
+    //    @Column(name = "topic")
     private String topic;
 
-    @Column(name = "payload")
+    //    @Column(name = "payload")
     private String payload;
+
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(teacher, homeWorks, lectureNumber, topic, id);
     }
 
-    public Lecture(){}
+    public Lecture() {
+    }
+
     public Lecture(int lectureNumber) {
         this.lectureNumber = lectureNumber;
     }
