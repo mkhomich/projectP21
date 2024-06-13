@@ -2,17 +2,13 @@ package ru.top.project.dao.impl.jpa;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.NativeQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.top.project.dao.UserDao;
 import ru.top.project.model.User;
 
-import javax.net.ssl.HandshakeCompletedEvent;
 import java.math.BigInteger;
-import java.sql.PreparedStatement;
 import java.util.List;
 
 @Repository
@@ -37,9 +33,9 @@ public class UserJpaDaoImpl implements UserDao {
     }
 
     @Override
-    public User removeUser(BigInteger userId) {
-        User user = null;
-        getSession().createQuery("DELETE FROM User WHERE id = :id").setParameter("id", userId).executeUpdate();
+    public User removeUser(Long userId) {
+        User user = getSession().find(User.class, userId);
+        getSession().createQuery("DELETE FROM User WHERE id = :id").setParameter("id", user.getUserId()).executeUpdate();
         return user;
     }
 

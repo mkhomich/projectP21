@@ -21,7 +21,7 @@ public class UserDaoJdbcImpl implements UserDao {
         return null;
     }
     @Override
-    public User removeUser(BigInteger userId) {
+    public User removeUser(Long userId) {
         return null;
     }
 

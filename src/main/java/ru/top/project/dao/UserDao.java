@@ -8,11 +8,9 @@ import java.util.List;
 public interface UserDao {
     User addUser(User user);
 
-    User removeUser(BigInteger userId);
-
     List<User> getAllUsers();
 
     public User getUserById(BigInteger id);
 
-
+    User removeUser(Long userId);
 }

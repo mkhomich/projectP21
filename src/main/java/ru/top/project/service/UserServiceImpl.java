@@ -25,7 +25,10 @@ public class UserServiceImpl {
     }
 
     @Transactional(readOnly = true)
-    public User getUser(BigInteger id) {
-        return userDao.getUserById(id);
+    public User getUser(Long id) {
+        return userDao.getUserById(BigInteger.valueOf(id));
     }
+
+    @Transactional
+    public User removeUser(Long userId){ return userDao.removeUser(userId);}
 }

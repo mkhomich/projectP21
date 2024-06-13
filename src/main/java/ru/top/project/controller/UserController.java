@@ -25,7 +25,12 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable BigInteger id) {
+    public User getUser(@PathVariable Long id) {
         return userService.getUser(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public User removeUser(@PathVariable("id") Long userId){
+        return userService.removeUser(userId);
     }
 }
