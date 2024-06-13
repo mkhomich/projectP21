@@ -1,0 +1,24 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        logicalFilePath="001_create_users_table.xml"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+<changeSet id="createHomeworkTable" author="Roman">
+    <createTable tableName="homework">
+        <column name="id" type="BIGINT">
+            <constraints primaryKey="true"/>
+        </column>
+        <column name="title" type="TEXT"/>
+        <column name="deadline" type="TIMESTAMP"/>
+        <column name="mark" type="TEXT"/>
+        <column name="info_homework" type="TEXT"/>
+        <column name="user_passed" type="BOOLEAN"/>
+        <column name="name_teacher" type="TEXT"/>
+    </createTable>
+</changeSet>
+</databaseChangeLog>

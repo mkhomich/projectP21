@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        logicalFilePath="002_create_course_table.xml"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+<changeSet id="002_create_course_table.xml" author="Roman">
+    <createTable tableName="Course">
+        <column name="id" type="BIGINT">
+            <constraints primaryKey="true"/>
+        </column>
+        <column name="creator" type="BIGINT">
+            <constraints foreignKeyName="fk_course_creator" references="Users(id)"/>
+        </column>
+        <column name="i
+        nfo_course" type="TEXT"/>
+        <column name="photo_URL" type="TEXT"/>
+        <column name="survey" type="TEXT"/>
+    </createTable>
+</changeSet>
+</databaseChangeLog>
