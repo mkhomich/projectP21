@@ -1,26 +1,26 @@
 package ru.top.project.model;
 
+import jakarta.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
 
-//@Entity
-//@Table(name = "homework")
+@Entity
+@Table(name = "homework")
 public class HomeWork {
-    //    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
-    //    @Column(name = "title")
+    @Column(name = "title")
     private String title;
-    //    @Column(name = "deadline")
+    @Column(name = "deadline")
     private String deadline;
-    //    @Column(name = "mark")
+    @Column(name = "mark")
     private String mark;
-    //    @Column(name = "info_homework")
+    @Column(name = "info_homework")
     private String infoHomework;
-    //    @Column(name = "user_passed")
+    @Column(name = "user_passed")
     private String userPassed;
-    //    @Column(name = "name_teacher")
+    @Column(name = "name_teacher")
     private String nameTeacher;
 
     public HomeWork() {

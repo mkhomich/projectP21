@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-#  testservie:
-#    image: tomcat
+  testservie:
+    image: tomcat
 
   database:
     image: postgres

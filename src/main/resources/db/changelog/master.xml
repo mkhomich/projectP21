@@ -7,5 +7,6 @@
 
     <include file="db/changelog/changelogs/001_create_users_table.xml"/>
     <include file="db/changelog/changelogs/002_create_courses_table.xml"/>
+    <include file="db/changelog/changelogs/003_create_homeWork_table.xml"/>
 
 </databaseChangeLog>

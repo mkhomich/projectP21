@@ -1,29 +1,31 @@
 package ru.top.project.model;
 
+import jakarta.persistence.*;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-//@Entity
-//@Table(name = "course")
+@Entity
+@Table(name = "course")
 public class Course {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
 
 //    @ManyToOne
-//    @Column(name = "creator")
-    private String creator;
+    @Column(name = "creator")
+    private BigInteger creator;
 
-//    @Column(name = "info_course")
+    @Column(name = "info_course")
     private String infoCourse;
 
-//    @Column(name = "survey")
+    @Column(name = "photo_URL")
     private String urlPhotoCourse;
 
+    @Column(name = "survey")
     private String survey;
 
 //    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
@@ -45,7 +47,7 @@ public class Course {
                 ", информация о курсе - '" + infoCourse + '\'';
     }
 
-    public Course(BigInteger id, String creator, String infoCourse, String survey) {
+    public Course(BigInteger id, BigInteger creator, String infoCourse, String survey) {
         this.id = id;
         this.creator = creator;
         this.infoCourse = infoCourse;
@@ -81,10 +83,10 @@ public class Course {
         this.infoCourse = infoCourse;
     }
 
-    public String getCreator() {
+    public BigInteger getCreator() {
         return creator;
     }
-    public void setCreator(String creator) {
+    public void setCreator(BigInteger creator) {
         this.creator = creator;
     }
 

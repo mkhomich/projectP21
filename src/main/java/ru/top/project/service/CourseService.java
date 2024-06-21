@@ -8,10 +8,11 @@ import ru.top.project.model.HomeWork;
 import ru.top.project.model.Lecture;
 import ru.top.project.model.Review;
 
-
+@Service
 class CourseService {
-    //@Autowired
+    @Autowired
     private CourseJpaDaoImpl dao;
+
     public CourseService() {
     }
     public void enterCourse(){}

@@ -9,7 +9,7 @@
     <changeSet id="001_create_users_table.xml" author="Roman">
 
         <createTable tableName="clients">
-            <column name="id" type="BIGINT">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="TEXT"/>
