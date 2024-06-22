@@ -10,12 +10,6 @@ public interface ReviewsDao {
 
     Review updateReview(Review review);
 
-    void deleteReview(int reviewId);
-
-    Review getReviewById(int reviewId);
-
-    List<Review> getAllReviewsForCourse(int courseId);
-
     void deleteReview(BigInteger reviewId);
 
     Review getReviewById(BigInteger reviewId);

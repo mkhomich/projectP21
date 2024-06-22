@@ -1,15 +1,15 @@
 package ru.top.project.model;
 
+import jakarta.persistence.*;
 import java.math.BigInteger;
 import java.util.Objects;
 
-//@Entity
-//@Table(name = "review")
+@Entity
+@Table(name = "review")
 public class Review {
 
-    //    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
 
     //    @ManyToOne
@@ -17,10 +17,10 @@ public class Review {
 //    @JoinColumn(name = "id")
     private Course course;
 
-    //    @Column(name = "comment")
+    @Column(name = "comment")
     private String comment;
 
-    //    @Column(name = "mark")
+    @Column(name = "mark")
     private String mark;
 
     public Review() {

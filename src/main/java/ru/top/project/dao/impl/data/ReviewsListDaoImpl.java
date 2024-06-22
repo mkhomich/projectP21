@@ -30,21 +30,6 @@ public class ReviewsListDaoImpl implements ReviewsDao {
     }
 
     @Override
-    public void deleteReview(int reviewId) {
-
-    }
-
-    @Override
-    public Review getReviewById(int reviewId) {
-        return null;
-    }
-
-    @Override
-    public List<Review> getAllReviewsForCourse(int courseId) {
-        return null;
-    }
-
-    @Override
     public void deleteReview(BigInteger reviewId) {
         Review reviewToRemove = null;
         for (Review review : reviewsList) {
