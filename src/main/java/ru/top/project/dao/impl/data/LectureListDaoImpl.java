@@ -22,7 +22,7 @@ public abstract class LectureListDaoImpl implements LectureDao {
     @Override
     public Lecture getLectureById(BigInteger id) {
         for (Lecture lecture : lectureList) {
-            if (lecture.getId() == id) {
+            if (id == lecture.getId()) {
                 return lecture;
             }
         }
