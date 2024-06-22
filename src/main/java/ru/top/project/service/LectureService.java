@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ru.top.project.dao.impl.data.LectureListDaoImpl;
 import ru.top.project.model.Lecture;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class LectureService {
@@ -21,13 +22,13 @@ public class LectureService {
     public void updateLecture(Lecture lecture) {
         lectureListDaoImpl.updateLecture(lecture);
     }
-    public void deleteLecture(int lectureId) {
+    public void deleteLecture(BigInteger lectureId) {
         lectureListDaoImpl.deleteLecture(lectureId);
     }
-    public Lecture getLectureById(int lectureId) {
+    public Lecture getLectureById(BigInteger lectureId) {
         return lectureListDaoImpl.getLectureById(lectureId);
     }
-    public List<Lecture> getAllLecturesByCourse(int courseId) {
+    public List<Lecture> getAllLecturesByCourse(BigInteger courseId) {
         return (List<Lecture>) lectureListDaoImpl.getLectureById(courseId);
     }
 }

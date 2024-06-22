@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        logicalFilePath="004_create_lecture_table.xml"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="004_create_lecture_table.xml" author="Roman">
+        <createTable tableName="lecture">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="teacher" type="TEXT"/>
+            <column name="course_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+            <column name="homeWorks" type="INT"/>
+            <column name="lecture_number" type="BIGINT"/>
+            <column name="topic" type="TEXT"/>
+            <column name="payload" type="TEXT"/>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

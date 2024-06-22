@@ -88,6 +88,7 @@ public class Lecture {
         return id;
     }
 
+
     public void setId(BigInteger id) {
         this.id = id;
     }

@@ -8,5 +8,5 @@
     <include file="db/changelog/changelogs/001_create_users_table.xml"/>
     <include file="db/changelog/changelogs/002_create_courses_table.xml"/>
     <include file="db/changelog/changelogs/003_create_homeWork_table.xml"/>
-
+    <include file="db/changelog/changelogs/004_create_lecture_table.xml"/>
 </databaseChangeLog>
